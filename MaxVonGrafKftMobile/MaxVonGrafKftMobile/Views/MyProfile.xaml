@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:MaxVonGrafKftMobile.MarkupExtensions"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.Views.MyProfile"
+             BackgroundColor="{StaticResource MaxVonWhite}">
+    <ContentPage.Content>
+        <StackLayout Margin="10,0,10,0" VerticalOptions="CenterAndExpand">
+            <Label Text="My profile"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Medium"
+               FontAttributes="Bold"
+               TextColor="{StaticResource MaxVonBlack}"
+               Margin="0,0,0,0"/>
+            <ScrollView Margin="0,15,0,0">
+                <StackLayout Margin="0,15,0,10" >
+
+                    <Frame HeightRequest="150"
+                           WidthRequest="150"
+                           CornerRadius="10"
+                           Padding="0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start"
+                           IsClippedToBounds="True"
+                           BorderColor="{StaticResource MaxVonYellow}">
+                        <Image Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.profile.jpg}"
+                               WidthRequest="150"
+                               Aspect="AspectFill"
+                               x:Name="profileImage"></Image>
+                    </Frame>
+                    <!--<StackLayout Margin="20,40,20,20">
+
+                        
+
+                        <Label FontSize="Subtitle"
+                               TextColor="{StaticResource MaxVonBlack}">First name</Label>
+                        <Label FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                           Margin="20,0,0,10">First</Label>
+                        <Frame HeightRequest="1"
+                               BorderColor="{StaticResource MaxVonGray}"
+                               Padding="0"></Frame>
+
+                        <Label FontSize="Subtitle"
+                               TextColor="{StaticResource MaxVonBlack}">Last name</Label>
+                        <Label FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                           Margin="20,0,0,10">adfygHAIO</Label>
+                        <Frame HeightRequest="1"
+                               BorderColor="{StaticResource MaxVonGray}"
+                               Padding="0"></Frame>
+
+                        <Label FontSize="Subtitle"
+                               TextColor="{StaticResource MaxVonBlack}">Date of birth</Label>
+                        <Label FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                           Margin="20,0,0,10">01/01/2018</Label>
+                        <Frame HeightRequest="1"
+                               BorderColor="{StaticResource MaxVonGray}"
+                               Padding="0"></Frame>
+
+
+
+                        <Label FontSize="Subtitle"
+                               TextColor="{StaticResource MaxVonBlack}">Address</Label>
+                        <Label FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                           Margin="20,0,0,10">QWERTY xvdb</Label>
+                        <Frame HeightRequest="1"
+                               BorderColor="{StaticResource MaxVonGray}"
+                               Padding="0"></Frame>
+
+                        <Label FontSize="Subtitle"
+                               TextColor="{StaticResource MaxVonBlack}">Mobile number</Label>
+                        <Label FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                           Margin="20,0,0,10">21654879874</Label>
+                        <Frame HeightRequest="1"
+                               BorderColor="{StaticResource MaxVonGray}"
+                               Padding="0"></Frame>
+
+                        <Label FontSize="Subtitle"
+                               TextColor="{StaticResource MaxVonBlack}">Email</Label>
+                        <Label FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                           Margin="20,0,0,10">a@a.a</Label>
+                        <Frame HeightRequest="1"
+                               BorderColor="{StaticResource MaxVonGray}"
+                               Padding="0"></Frame>
+
+                        <Label FontSize="Subtitle"
+                               TextColor="{StaticResource MaxVonBlack}">Total reservations made</Label>
+                        <Label FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                           Margin="20,0,0,10">05</Label>
+                        <Frame HeightRequest="1"
+                               BorderColor="{StaticResource MaxVonGray}"
+                               Padding="0"></Frame>
+
+                        <Label FontSize="Subtitle"
+                               TextColor="{StaticResource MaxVonBlack}">Total Agreements made</Label>
+                        <Label FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                           Margin="20,0,0,10">05</Label>
+                        <Frame HeightRequest="1"
+                               BorderColor="{StaticResource MaxVonGray}"
+                               Padding="0"></Frame>
+                    </StackLayout>-->
+
+
+                    <Grid Margin="10,30,10,0"
+                          RowSpacing="10" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}">First name</Label>
+                        <Label Grid.Row="0"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="firstNameLabel"></Label>
+
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}">Last name</Label>
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="LastNameLabel"></Label>
+
+                        <Label Grid.Row="2"
+                               Grid.Column="0"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}">Date of birth</Label>
+                        <Label Grid.Row="2"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="dobLabel"></Label>
+
+                        <Label Grid.Row="3"
+                               Grid.Column="0"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}">Address</Label>
+                        <Label Grid.Row="3"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="addressLabel"></Label>
+
+                        <Label Grid.Row="4"
+                               Grid.Column="0"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}">Mobile number</Label>
+                        <Label Grid.Row="4"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="MobileNoLabel"></Label>
+
+                        <Label Grid.Row="5"
+                               Grid.Column="0"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}">Email</Label>
+                        <Label Grid.Row="5"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="EmailLabel"></Label>
+
+                        <Label Grid.Row="6"
+                               Grid.Column="0"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}">Total Reservations made</Label>
+                        <Label Grid.Row="6"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="totalReservationNoLabel"></Label>
+
+                        <Label Grid.Row="7"
+                               Grid.Column="0"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}">Total Agreements made</Label>
+                        <Label Grid.Row="7"
+                               Grid.Column="1"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonGray}"
+                               x:Name="totalagreementNoLabel"></Label>
+                    </Grid>
+                    <Button Text="Update profile"
+                                BackgroundColor="{StaticResource MaxVonYellow}"
+                                TextColor="{StaticResource MaxVonWhite}"
+                                BorderWidth="0"
+                                CornerRadius="10"
+                                HeightRequest="45"
+                                x:Name="updateBtn"
+                                Margin="0,30,0,10"
+                                Clicked="UpdateBtn_Clicked"></Button>
+                    <Grid HorizontalOptions="Fill"
+                              Margin="0,0,0,30"
+                              ColumnSpacing="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button BackgroundColor="{StaticResource MaxVonYellow}"
+                                    Text="ContactUs"
+                                    TextColor="{StaticResource MaxVonWhite}"
+                                    BorderWidth="0"
+                                    CornerRadius="10"
+                                    x:Name="contactUsBtn"
+                                    HeightRequest="45"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                Clicked="ContactUsBtn_Clicked"></Button>
+
+                        <Button BackgroundColor="{StaticResource MaxVonYellow}"
+                                    Text="Logout"
+                                    TextColor="{StaticResource MaxVonWhite}"
+                                    BorderWidth="0"
+                                    CornerRadius="10"
+                                    x:Name="logoutBtn"
+                                    HeightRequest="45"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                Clicked="LogoutBtn_Clicked"></Button>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

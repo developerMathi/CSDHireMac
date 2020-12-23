@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             xmlns:renders="clr-namespace:MaxVonGrafKftMobile.Renders"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.Views.SummaryOfChargesPage"
+             BackgroundColor="{StaticResource MaxVonWhite}">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Login" 
+                     Clicked="LoginIcon_Clicked" 
+                     x:Name="loginIcon"
+                     ></ToolbarItem>
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="10,1,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Frame HeightRequest="40"
+                       WidthRequest="40"
+                       CornerRadius="40"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Padding="0"
+                       BackgroundColor="Transparent"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand">
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource MaxVonBlack}">1</Label>
+                </Frame>
+                <Frame HeightRequest="40"
+                       WidthRequest="40"
+                       CornerRadius="40"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Grid.Row="0"
+                       Grid.Column="3"
+                       Padding="0"
+                       BackgroundColor="Transparent"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand">
+                    <Label Grid.Row="0"
+                           Grid.Column="3"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource MaxVonBlack}">2</Label>
+                </Frame>
+
+                <Frame HeightRequest="40"
+                       WidthRequest="40"
+                       CornerRadius="40"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Grid.Row="0"
+                       Grid.Column="5"
+                       Padding="0"
+                       BackgroundColor="Transparent"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand">
+                    <Label Grid.Row="0"
+                           Grid.Column="5"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource MaxVonBlack}">3</Label>
+                </Frame>
+
+                <Frame HeightRequest="40"
+                       WidthRequest="40"
+                       CornerRadius="40"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Grid.Row="0"
+                       Grid.Column="7"
+                       Padding="0"
+                       BackgroundColor="{StaticResource MaxVonYellow}"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand">
+                    <Label Grid.Row="0"
+                           Grid.Column="5"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource MaxVonWhite}">4</Label>
+                </Frame>
+
+
+            </Grid>
+
+            <StackLayout Margin="25,5,25,0" VerticalOptions="CenterAndExpand">
+                <Label Text="Summary of charges"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Subtitle"
+               FontAttributes="Bold"
+               TextColor="{StaticResource MaxVonBlack}"
+               Margin="0,0,0,5"/>
+                <ScrollView Margin="0,15,0,0">
+                    <StackLayout >
+                        <Grid HorizontalOptions="Fill"
+                              Margin="0,10,0,10"
+                              ColumnSpacing="10"
+                          RowSpacing="10" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="6*"/>
+                                <ColumnDefinition Width="4*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Vehicle details"
+                               HorizontalOptions="Center"
+                               FontSize="16"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="0"
+                               Grid.ColumnSpan="2"
+                                   FontAttributes="Bold"/>
+                            <Label Text="Vehicle type"
+                               HorizontalOptions="StartAndExpand"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="1"
+                               Grid.Column="0"/>
+                            <Label x:Name="VehicletypeEntry"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="1"
+                               Grid.Column="1"/>
+                        </Grid>
+
+                        <Grid HorizontalOptions="Fill"
+                              Margin="0,5,10,10"
+                              ColumnSpacing="10"
+                          RowSpacing="10" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="6*"/>
+                                <ColumnDefinition Width="4*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Charges"
+                               HorizontalOptions="Center"
+                               FontSize="16"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="1"
+                               Grid.ColumnSpan="2"
+                                   FontAttributes="Bold"/>
+                            <Label Text="No of Days "
+                               HorizontalOptions="StartAndExpand"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="2"
+                               Grid.Column="0"/>
+                            <Label x:Name="noOfDaysEntry"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="2"
+                               Grid.Column="1"
+                                   HorizontalOptions="End"/>
+
+                            <Label Text="Total Rental Fee"
+                               HorizontalOptions="StartAndExpand"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="3"
+                               Grid.Column="0"/>
+                            <Label x:Name="totalRentalFeeEntry"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="3"
+                               Grid.Column="1"
+                                   HorizontalOptions="End"/>
+
+                            <Label Text="Discount"
+                               HorizontalOptions="StartAndExpand"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="4"
+                               Grid.Column="0"/>
+                            <Label x:Name="DiscountEntry"
+                               FontSize="Small"
+                                   Text="0.00"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="4"
+                               Grid.Column="1"
+                                   HorizontalOptions="End"/>
+
+                            <Label Text="Taxable Mis.Charge"
+                               HorizontalOptions="StartAndExpand"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="5"
+                               Grid.Column="0"/>
+                            <Label x:Name="totalMisChargeEntry"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="5"
+                               Grid.Column="1"
+                                   HorizontalOptions="End"/>
+
+                            <Label Text="NonTaxable Mis.Charge"
+                               HorizontalOptions="StartAndExpand"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="6"
+                               Grid.Column="0"/>
+                            <Label x:Name="nonMisChargeEntry"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="6"
+                               Grid.Column="1"
+                                   HorizontalOptions="End"/>
+
+                            <Label Text="Total Tax Amount"
+                               HorizontalOptions="StartAndExpand"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="7"
+                               Grid.Column="0"/>
+                            <Label x:Name="totalTaxEntry"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="7"
+                               Grid.Column="1"
+                                   HorizontalOptions="End"/>
+
+                            <Label Text="Total Amount"
+                               HorizontalOptions="StartAndExpand"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="8"
+                               Grid.Column="0"/>
+                            <Label x:Name="totalAmountEntry"
+                               FontSize="Small"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="8"
+                               Grid.Column="1"
+                                   HorizontalOptions="End"/>
+
+                        </Grid>
+
+
+                        <!--Additonal driver block-->
+                        <Grid HorizontalOptions="Fill"
+                              Margin="0,10,0,10"
+                          RowSpacing="10" >
+                            <Grid.ColumnDefinitions>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="40"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Text="Additional Driver"
+                               HorizontalOptions="Center"
+                               FontSize="16"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="0"
+                                   FontAttributes="Bold"/>
+                            <Label Text="No Additonal drivers.. Please click the button 'ADD ADITIONAL DRIVER' to add adiitonal driver"
+                               HorizontalOptions="StartAndExpand"
+                               FontSize="Body"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               Grid.Row="1"
+                               Grid.Column="0"
+                                   x:Name="NoAdditionalDriverLabel"/>
+
+                            <ListView Margin="0,10,0,10"
+                                      x:Name="additionalDriverList"
+                                      RowHeight="130" 
+                                      HasUnevenRows="False"
+                                      SeparatorColor="{StaticResource MaxVonYellow}"
+                                      IsPullToRefreshEnabled="True"
+                                      RefreshControlColor="{StaticResource MaxVonYellow}"
+                                      VerticalScrollBarVisibility="Never"
+                                      IsVisible="False"
+                                      Grid.Row="1"
+                                      ItemSelected="additionalDriverList_ItemSelected"
+                               Grid.Column="0">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <renders:ExtendedViewCell SelectedBackgroundColor="{StaticResource MaxVonWhite}">
+                                            <Grid ColumnSpacing="10"
+                                                  Margin="0,10,0,10">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="30"></RowDefinition>
+                                                    <RowDefinition Height="30"></RowDefinition>
+                                                    <RowDefinition Height="30"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Frame Grid.RowSpan="3"
+                                               Grid.ColumnSpan="3"
+                                               BackgroundColor="Transparent"
+                                               BorderColor="{StaticResource MaxVonYellow}"
+                                               CornerRadius="10"
+                                               Padding="5,5,10,5"></Frame>
+                                                <Label Grid.Row="0"
+                                                       Grid.Column="0"
+                                                       Text="First name"
+                                                       FontSize="Small"
+                                                       FontAttributes="Bold"
+                                                       TextColor="{StaticResource MaxVonBlack}"
+                                                       HorizontalOptions="End"
+                                                       VerticalOptions="Center"></Label>
+                                                <Label Grid.Row="1"
+                                                       Grid.Column="0"
+                                                       Text="Last name"
+                                                       FontSize="Small"
+                                                       FontAttributes="Bold"
+                                                       TextColor="{StaticResource MaxVonBlack}"
+                                                       HorizontalOptions="End"
+                                                       VerticalOptions="Center"></Label>
+                                                <Label Grid.Row="2"
+                                                       Grid.Column="0"
+                                                       Text="Ph.number"
+                                                       FontSize="Small"
+                                                       FontAttributes="Bold"
+                                                       TextColor="{StaticResource MaxVonBlack}"
+                                                       HorizontalOptions="End"
+                                                       VerticalOptions="Center"></Label>
+
+                                                <Label Grid.Row="0"
+                                                       Grid.Column="1"
+                                                       Text="{Binding FirstName}"
+                                                       FontSize="Small"
+                                                       TextColor="{StaticResource MaxVonBlack}"
+                                                       HorizontalOptions="Start"
+                                                       VerticalOptions="Center"></Label>
+                                                <Label Grid.Row="1"
+                                                       Grid.Column="1"
+                                                       Text="{Binding LastName}"
+                                                       FontSize="Small"
+                                                       TextColor="{StaticResource MaxVonBlack}"
+                                                       HorizontalOptions="Start"
+                                                       VerticalOptions="Center"></Label>
+                                                <Label Grid.Row="2"
+                                                       Grid.Column="1"
+                                                       Text="{Binding hPhone}"
+                                                       FontSize="Small"
+                                                       TextColor="{StaticResource MaxVonBlack}"
+                                                       HorizontalOptions="Start"
+                                                       VerticalOptions="Center"></Label>
+
+                                            </Grid>
+                                        </renders:ExtendedViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+
+                            <Button Text="ADD ADITIONAL DRIVER"
+                                BackgroundColor="Transparent"
+                                TextColor="{StaticResource MaxVonYellow}"
+                                BorderWidth="2"
+                                CornerRadius="10"
+                                HeightRequest="40"
+                                    BorderColor="{StaticResource MaxVonYellow}"
+                                x:Name="addDriverBtn"
+                                Grid.Row="2"
+                               Grid.Column="0"
+                                Clicked="addDriverBtn_Clicked"></Button>
+
+                        </Grid>
+                        <!--End of additional driver block-->
+
+
+
+
+                        <Label Text="Terms And Conditions"
+                           HorizontalOptions="Center"
+                           FontSize="16"
+                           TextColor="{StaticResource MaxVonBlack}"
+                           Margin="0,10,0,10"
+                               FontAttributes="Bold"/>
+                        <!--<Label  x:Name="terms" 
+                               FontSize="12"
+                               TextColor="{StaticResource MaxVonBlack}"
+                            FontAttributes="Bold"
+                            VerticalTextAlignment="Start">
+                        </Label>
+
+                        <Label  x:Name="tacDescription" 
+                               FontSize="12"
+                               TextColor="{StaticResource MaxVonBlack}"
+                            VerticalTextAlignment="Start">
+                        </Label>-->
+
+
+                        <ListView x:Name="termList"  
+                              Margin="0,20,0,20" 
+                              SeparatorVisibility="None"
+                              VerticalScrollBarVisibility="Never"
+                                  RowHeight="600"
+                                  HeightRequest="600">
+                            <ListView.ItemTemplate>
+                                <DataTemplate >
+                                    <renders:ExtendedViewCell SelectedBackgroundColor="{StaticResource MaxVonWhite}">
+                                        <Grid VerticalOptions="FillAndExpand">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Label Text="{Binding Term}" 
+                                                   FontSize="12"
+                                                   TextColor="{StaticResource MaxVonBlack}"
+                                                   FontAttributes="Bold"
+                                                   VerticalTextAlignment="Start"
+                                                   Grid.Row="0"></Label>
+
+                                            <Label Text="{Binding Description}"
+                                                   FontSize="12"
+                                                   TextColor="{StaticResource MaxVonBlack}"
+                                                   VerticalTextAlignment="Start"
+                                                   Grid.Row="1"
+                                                   VerticalOptions="FillAndExpand"></Label>
+                                        </Grid>
+                                    </renders:ExtendedViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                        </ListView>
+
+
+
+                        <input:CheckBox Type="Check"
+                                    Text="I hereby accept the terms and conditions"
+                                    Color="{StaticResource MaxVonYellow}"
+                                    TextColor="{StaticResource MaxVonBlack}"
+                                    TextFontSize="14"
+                                    Margin="0,10,0,10"
+                                    x:Name="TCcheckBox"></input:CheckBox>
+                        <Button Text="Book now"
+                                BackgroundColor="{StaticResource MaxVonYellow}"
+                                TextColor="{StaticResource MaxVonWhite}"
+                                BorderWidth="0"
+                                CornerRadius="10"
+                                HeightRequest="45"
+                                x:Name="bookNowBtn"
+                                Margin="0,20,0,30"
+                                Clicked="BookNowBtn_Clicked"></Button>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

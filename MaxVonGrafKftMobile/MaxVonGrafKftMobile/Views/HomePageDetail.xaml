@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+               xmlns:context="clr-namespace:ContextMenu.Views;assembly=ContextMenu"
+             xmlns:viewModels="clr-namespace:MaxVonGrafKftMobile.ViewModels"
+             xmlns:conv="clr-namespace:MaxVonGrafKftMobile.Converters"
+             xmlns:renders="clr-namespace:MaxVonGrafKftMobile.Renders"
+             xmlns:local="clr-namespace:MaxVonGrafKftMobile.MarkupExtensions"
+             x:Class="MaxVonGrafKftMobile.Views.HomePageDetail"
+             BackgroundColor="{StaticResource MaxVonWhite}"
+             IconImageSource="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.menu.png}">
+    
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:MenuFitWidthConverter x:Key="MenuFitWidthConverter" />
+            <conv:IsMutedToTextConverter x:Key="IsMutedToTextConverter" />
+            <conv:IsMutedToOpacityConverter x:Key="IsMutedToOpacityConverter"/>
+            <conv:IsMutedToBackgroundColorConverter x:Key="IsMutedToBackgroundColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+
+
+    <ContentPage.BindingContext>
+        <viewModels:BaseItemsViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Margin="10,5,10,20">
+        <Label Text="Home"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Subtitle"
+               FontAttributes="Bold"
+               TextColor="{StaticResource MaxVonBlack}"
+               Margin="0,0,0,0"/>
+        <Button Text="BOOK NOW"
+                        BorderWidth="0"
+                        x:Name="BooknowBtn"
+                        Clicked= "BooknowBtn_Clicked"
+                        HeightRequest="45"
+                        BackgroundColor="{StaticResource MaxVonYellow}"
+                        TextColor="{StaticResource MaxVonWhite}"
+                        Margin="0,15,0,0"></Button>
+        <ScrollView Margin="0,5,0,0">
+            <StackLayout >
+                
+
+
+                <Frame Padding="5"
+                       HorizontalOptions="Fill"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       CornerRadius="10"
+                       BackgroundColor="Transparent"
+                       Margin="0,20,0,0">
+                    <Grid Padding="0"
+                      HeightRequest="330"
+                          x:Name="upReserveFrame">
+
+                        <StackLayout Margin="10,10,10,10">
+                            <Label Text="Upcoming reservations"
+                       HorizontalOptions="StartAndExpand"
+                       FontSize="Body"
+                       TextColor="{StaticResource MaxVonBlack}"
+                               Margin="0,10,0,0" />
+                            <BoxView HeightRequest="1"
+                                   BackgroundColor="{StaticResource MaxVonYellow}"
+                                   Margin="0,0,0,0"></BoxView>
+                            <ScrollView >
+                                <StackLayout>
+                                    <ListView x:Name="upcomingReservation" 
+                                              ItemSelected="UpcomingReservation_ItemSelected" 
+                                              RowHeight="220" 
+                                              Margin="0,10,0,10" 
+                                              SeparatorColor="{StaticResource MaxVonYellow}"
+                                              SeparatorVisibility="Default"
+                                              HeightRequest="660">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <renders:ExtendedViewCell SelectedBackgroundColor="{StaticResource MaxVonWhite}">
+                                                    <Frame Padding="5"
+                                                           CornerRadius="3"
+                                                           BorderColor="{StaticResource MaxVonBlack}"
+                                                            Margin="0,10,0,10">
+                                                        <Grid Padding="5,15,5,15">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="3*"/>
+                                                                <ColumnDefinition Width="7*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.ColumnSpan="2"
+                                                                 Grid.Row="0">
+                                                                <Label Text="Reservation Number : " FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                                                <Label Text="{Binding ReservationNumber}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                                            </StackLayout>
+                                                            <Label Text="Check-out : " 
+                                                           FontSize="Small" 
+                                                           TextColor="{StaticResource MaxVonGray}"
+                                                           Grid.Row="1"
+                                                           Grid.Column="0"></Label>
+
+                                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.Column="1"
+                                                                 Grid.Row="1"
+                                                                         Padding="0">
+                                                                <ImageButton BackgroundColor='Transparent' Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.calender.png}" HeightRequest="20"></ImageButton>
+                                                                <Label Text="{Binding StartDate}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                                            </StackLayout>
+
+                                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.Column="1"
+                                                                 Grid.Row="2"
+                                                                         Padding="0">
+                                                                <ImageButton BackgroundColor='Transparent' Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.location.png}" HeightRequest="20" ></ImageButton>
+                                                                <Label Text="{Binding CheckoutLocation}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                                            </StackLayout>
+
+
+
+                                                            <Label Text="Check-in : " 
+                                                           FontSize="Small" 
+                                                           TextColor="{StaticResource MaxVonGray}"
+                                                           Grid.Row="3"
+                                                           Grid.Column="0"></Label>
+
+                                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.Column="1"
+                                                                 Grid.Row="3"
+                                                                         Padding="0">
+                                                                <ImageButton BackgroundColor='Transparent' Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.calender.png}" HeightRequest="20"></ImageButton>
+                                                                <Label Text="{Binding EndDate}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                                            </StackLayout>
+
+                                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.Column="1"
+                                                                 Grid.Row="4"
+                                                                         Padding="0">
+                                                                <ImageButton BackgroundColor='Transparent' Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.location.png}" HeightRequest="20" ></ImageButton>
+                                                                <Label Text="{Binding CheckinLocation}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                                            </StackLayout>
+
+
+
+                                                            <Label Text="status : " 
+                                                           FontSize="Small" 
+                                                           TextColor="{StaticResource MaxVonGray}"
+                                                           Grid.Row="5"
+                                                           Grid.Column="0"></Label>
+                                                            <Label Text="{Binding Status}" 
+                                                           FontSize="Small" 
+                                                           TextColor="{StaticResource MaxVonGray}"
+                                                           Grid.Row="5"
+                                                           Grid.Column="1"></Label>
+                                                        </Grid>
+                                                    </Frame>
+                                                </renders:ExtendedViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+
+
+
+
+                                    <Frame Padding="5"
+                                            CornerRadius="3"
+                                            BorderColor="{StaticResource MaxVonBlack}"
+                                            Margin="0,10,0,10"
+                                            x:Name="emptyReservation"
+                                            IsVisible="False">
+                                        <Grid Padding="5,15,5,15">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="3*"/>
+                                                <ColumnDefinition Width="7*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="No upcoming reservation " 
+                                                   FontSize="Small" 
+                                                   TextColor="{StaticResource MaxVonGray}"
+                                                   Grid.Row="2"
+                                                   Grid.ColumnSpan="2"
+                                                   HorizontalOptions="Center"></Label>
+                                        </Grid>
+                                    </Frame>
+
+
+
+
+
+                                </StackLayout>
+                            </ScrollView>
+                            <Label Text="View all >>" 
+                                   TextColor="{StaticResource MaxVonBlack}"
+                                   HorizontalOptions="End"
+                                   FontSize="Small"
+                                   Margin="0,10,0,0"
+                                   x:Name="allReservationLabel"></Label>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <Frame Padding="5"
+                       HorizontalOptions="Fill"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       CornerRadius="10"
+                       BackgroundColor="Transparent"
+                       Margin="0,20,0,0">
+                    <Grid Padding="0"
+                      HeightRequest="330"
+                          x:Name="myRentFrame">
+
+                        <StackLayout Margin="10,10,10,10">
+                            <Label Text="My rentals"
+                       HorizontalOptions="StartAndExpand"
+                       FontSize="Body"
+                       TextColor="{StaticResource MaxVonBlack}"
+                               Margin="0,10,0,0"/>
+                            <BoxView HeightRequest="1"
+                                   BackgroundColor="{StaticResource MaxVonYellow}"
+                                   Margin="0,0,0,0"></BoxView>
+                            <ScrollView >
+                                <StackLayout>
+                                    <ListView x:Name="myRentals" 
+                                              ItemSelected="MyRentals_ItemSelected" 
+                                              RowHeight="220" 
+                                              Margin="0,10,0,10" 
+                                              SeparatorColor="{StaticResource MaxVonYellow}"
+                                              SeparatorVisibility="Default"
+                                              HeightRequest="660">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <renders:ExtendedViewCell SelectedBackgroundColor="{StaticResource MaxVonWhite}">
+                                                    <Frame Padding="5"
+                                                           CornerRadius="3"
+                                                           BorderColor="{StaticResource MaxVonBlack}"
+                                                            Margin="0,10,0,10">
+                                                        <Grid Padding="5,15,5,15">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="3*"/>
+                                                                <ColumnDefinition Width="7*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.ColumnSpan="2"
+                                                                 Grid.Row="0">
+                                                                <Label Text="Agreement Number : " FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                                                <Label Text="{Binding AgreementNumber}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                                            </StackLayout>
+                                                            <Label Text="Check-out : " 
+                                                           FontSize="Small" 
+                                                           TextColor="{StaticResource MaxVonGray}"
+                                                           Grid.Row="1"
+                                                           Grid.Column="0"></Label>
+
+                                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.Column="1"
+                                                                 Grid.Row="1"
+                                                                         Padding="0">
+                                                                <ImageButton BackgroundColor='Transparent' Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.calender.png}" HeightRequest="20"></ImageButton>
+                                                                <Label Text="{Binding CheckoutDate}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                                            </StackLayout>
+
+                                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.Column="1"
+                                                                 Grid.Row="2"
+                                                                         Padding="0">
+                                                                <ImageButton BackgroundColor='Transparent' Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.location.png}" HeightRequest="20" ></ImageButton>
+                                                                <Label Text="{Binding CheckoutLocation}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                                            </StackLayout>
+
+
+
+                                                            <Label Text="Check-in : " 
+                                                           FontSize="Small" 
+                                                           TextColor="{StaticResource MaxVonGray}"
+                                                           Grid.Row="3"
+                                                           Grid.Column="0"></Label>
+
+                                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.Column="1"
+                                                                 Grid.Row="3"
+                                                                         Padding="0">
+                                                                <ImageButton BackgroundColor='Transparent' Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.calender.png}" HeightRequest="20"></ImageButton>
+                                                                <Label Text="{Binding CheckinDate}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                                            </StackLayout>
+
+                                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.Column="1"
+                                                                 Grid.Row="4"
+                                                                         Padding="0">
+                                                                <ImageButton BackgroundColor='Transparent' Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.location.png}" HeightRequest="20" ></ImageButton>
+                                                                <Label Text="{Binding CheckinLocation}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                                            </StackLayout>
+
+
+
+                                                            <Label Text="status : " 
+                                                           FontSize="Small" 
+                                                           TextColor="{StaticResource MaxVonGray}"
+                                                           Grid.Row="5"
+                                                           Grid.Column="0"></Label>
+                                                            <Label Text="{Binding Status}" 
+                                                           FontSize="Small" 
+                                                           TextColor="{StaticResource MaxVonGray}"
+                                                           Grid.Row="5"
+                                                           Grid.Column="1"></Label>
+                                                        </Grid>
+                                                    </Frame>
+                                                </renders:ExtendedViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+
+
+                                    <Frame Padding="5"
+                                            CornerRadius="3"
+                                            BorderColor="{StaticResource MaxVonBlack}"
+                                            Margin="0,10,0,10"
+                                            x:Name="emptyMyrentals"
+                                            IsVisible="False">
+                                        <Grid Padding="5,15,5,15">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="3*"/>
+                                                <ColumnDefinition Width="7*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="No my rentals " 
+                                                   FontSize="Small" 
+                                                   TextColor="{StaticResource MaxVonGray}"
+                                                   Grid.Row="2"
+                                                   Grid.ColumnSpan="2"
+                                                   HorizontalOptions="Center"></Label>
+                                        </Grid>
+                                    </Frame>
+
+
+
+                                </StackLayout>
+                            </ScrollView>
+                            <Label Text="View all >>" 
+                                   TextColor="{StaticResource MaxVonBlack}"
+                                   HorizontalOptions="End"
+                                   FontSize="Small"
+                                   Margin="0,10,0,0"
+                                   x:Name="allAgreementLabel"></Label>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+
+
+
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

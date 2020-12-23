@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             xmlns:controls="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             xmlns:renders="clr-namespace:MaxVonGrafKftMobile.Renders"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.Views.DamageCheckListCheckOut"
+             BackgroundColor="{StaticResource MaxVonWhite}">
+    <ContentPage.Content>
+        <StackLayout Margin="10,0,10,0" VerticalOptions="CenterAndExpand">
+            <Label Text="Damage checkList - CheckOut"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Medium"
+               FontAttributes="Bold"
+               TextColor="{StaticResource MaxVonBlack}"
+               Margin="0,0,0,0"/>
+            <ScrollView Margin="0,0,0,0">
+                <StackLayout Margin="15,15,15,10">
+
+
+                    <ListView x:Name="damageList"  
+                              RowHeight="84" 
+                              Margin="0,20,0,0" 
+                              SeparatorVisibility="None"
+                              VerticalScrollBarVisibility="Never">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <renders:ExtendedViewCell  SelectedBackgroundColor="White">
+
+                                    <!--<Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="7*"/>
+                                            <ColumnDefinition Width="5*"/>
+                                        </Grid.ColumnDefinitions>
+
+
+
+                                        <Label Text="{Binding Description}" 
+                                               FontSize="Small" 
+                                               TextColor="{StaticResource MaxVonBlack}"
+                                               Grid.Row="0"
+                                               Grid.Column="0"></Label>
+                                        <input:RadioButtonGroupView Orientation="Horizontal" 
+                                                                    Spacing="15" 
+                                                                    Grid.Column="1"
+                                                                    Grid.Row="0"
+                                                                    HorizontalOptions="Center"
+                                                                    IsEnabled="False">
+                                            <input:RadioButton Text="Yes" Value="1" TextFontSize="12" TextColor="{StaticResource MaxVonGray}" IsChecked="{Binding multiChoiceList[0].isOptional}"/>
+                                            <input:RadioButton Text="No" Value="0" TextFontSize="12" TextColor="{StaticResource MaxVonGray}" IsChecked="{Binding multiChoiceList[1].isOptional}"/>
+                                        </input:RadioButtonGroupView>
+                                    </Grid>-->
+
+
+                                    <StackLayout>
+
+                                        <Label Text="{Binding Description}" 
+                                               FontSize="Small" 
+                                               TextColor="{StaticResource MaxVonBlack}"></Label>
+
+
+
+                                        <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="false"	
+                                                          FlowItemsSource="{Binding multiChoiceList}"
+                                                          IsEnabled="False"
+                                                         HorizontalOptions="FillAndExpand"
+                                                          Margin="20,0,0,0">
+
+                                            <flv:FlowListView.FlowColumnTemplate>
+                                                <DataTemplate>
+                                                    <input:RadioButton Text="{Binding ButtonName}" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"  IsChecked="{Binding isOptional}"/>
+                                                </DataTemplate>
+                                            </flv:FlowListView.FlowColumnTemplate>
+                                        </flv:FlowListView>
+                                        <!--<input:RadioButtonGroupView Orientation="Horizontal" 
+                                                                    Spacing="15" 
+                                                                    Grid.Column="1"
+                                                                    Grid.Row="0"
+                                                                    HorizontalOptions="Center"
+                                                                    IsEnabled="False">
+                                            <input:RadioButton Text="Yes" Value="1" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"  IsChecked="{Binding multiChoiceList[0].isOptional}"/>
+                                            <input:RadioButton Text="No" Value="0" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"  IsChecked="{Binding multiChoiceList[1].isOptional}"/>
+                                        </input:RadioButtonGroupView>-->
+                                    </StackLayout>
+                                </renders:ExtendedViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+
+                    <ListView x:Name="damageListNonOption"  
+                              RowHeight="42" 
+                              Margin="0,20,0,20" 
+                              SeparatorVisibility="None"
+                              VerticalScrollBarVisibility="Never">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <renders:ExtendedViewCell  SelectedBackgroundColor="White">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+
+
+                                        <Frame BackgroundColor="Transparent"
+                                   BorderColor="{StaticResource MaxVonYellow}"
+                                   Grid.Row="0"
+                                   Grid.Column="1"
+                                   Padding="0,0,0,0"
+                                   CornerRadius="10"
+                                               Margin="0,3,0,3"></Frame>
+
+                                        <Label Text="{Binding Description}" 
+                                               FontSize="Small" 
+                                               TextColor="{StaticResource MaxVonBlack}"
+                                               Grid.Row="0"
+                                               Grid.Column="0"></Label>
+                                        <renders:CustomEntry Text="{Binding Area}" 
+                                               FontSize="Small" 
+                                               TextColor="{StaticResource MaxVonGray}"
+                                               Grid.Row="0"
+                                               Grid.Column="1"
+                                                             IsEnabled="False"></renders:CustomEntry>
+                                    </Grid>
+                                </renders:ExtendedViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <ListView x:Name="damageListCalender"  
+                              RowHeight="42" 
+                              Margin="0,0,0,20" 
+                              SeparatorVisibility="None"
+                              VerticalScrollBarVisibility="Never">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <renders:ExtendedViewCell  SelectedBackgroundColor="White">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+
+                                        <Frame BackgroundColor="Transparent"
+                                   BorderColor="{StaticResource MaxVonYellow}"
+                                   Grid.Row="0"
+                                   Grid.Column="1"
+                                   Padding="0,0,0,0"
+                                   CornerRadius="10"
+                                               Margin="0,3,0,3"></Frame>
+
+
+                                        <Label Text="{Binding Description}" 
+                                               FontSize="Small" 
+                                               TextColor="{StaticResource MaxVonBlack}"
+                                               Grid.Row="0"
+                                               Grid.Column="0"></Label>
+                                        <renders:CustomEntry Text="{Binding calendarstr}" 
+                                               FontSize="Small" 
+                                               TextColor="{StaticResource MaxVonGray}"
+                                               Grid.Row="0"
+                                               Grid.Column="1"
+                                                             IsEnabled="False"></renders:CustomEntry>
+                                    </Grid>
+                                </renders:ExtendedViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+
+                    <!--<Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+
+
+
+                        <Label Text="Rim/Tier/Wheel Cover Damage" 
+                           FontSize="Small" 
+                           TextColor="{StaticResource MaxVonBlack}"
+                           Grid.Row="0"
+                           Grid.Column="0"></Label>
+                    <input:RadioButtonGroupView Orientation="Horizontal" 
+                                                Spacing="15" 
+                                                Grid.Column="1"
+                                                Grid.Row="0"
+                                                HorizontalOptions="Center">
+                        <input:RadioButton Text="Yes" Value="1" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                        <input:RadioButton Text="No" Value="0" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                    </input:RadioButtonGroupView>
+
+                        <Label Text="MinorDamage" 
+                           FontSize="Small" 
+                           TextColor="{StaticResource MaxVonBlack}"
+                           Grid.Row="1"
+                           Grid.Column="0"></Label>
+                    <input:RadioButtonGroupView Orientation="Horizontal" 
+                                                Spacing="15" 
+                                                Grid.Column="1"
+                                                Grid.Row="1"
+                                                HorizontalOptions="Center">
+                        <input:RadioButton Text="Yes" Value="1" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                        <input:RadioButton Text="No" Value="0" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                    </input:RadioButtonGroupView>
+
+                        <Label Text="Windshield Damage" 
+                           FontSize="Small" 
+                           TextColor="{StaticResource MaxVonBlack}"
+                           Grid.Row="2"
+                           Grid.Column="0"></Label>
+                    <input:RadioButtonGroupView Orientation="Horizontal" 
+                                                Spacing="15" 
+                                                Grid.Column="1"
+                                                Grid.Row="2"
+                                                HorizontalOptions="Center">
+                        <input:RadioButton Text="Yes" Value="1" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                        <input:RadioButton Text="No" Value="0" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                    </input:RadioButtonGroupView>
+
+                        <Label Text="Antenna Damage" 
+                           FontSize="Small" 
+                           TextColor="{StaticResource MaxVonBlack}"
+                           Grid.Row="3"
+                           Grid.Column="0"></Label>
+                    <input:RadioButtonGroupView Orientation="Horizontal" 
+                                                Spacing="15" 
+                                                Grid.Column="1"
+                                                Grid.Row="3"
+                                                HorizontalOptions="Center">
+                        <input:RadioButton Text="Yes" Value="1" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                        <input:RadioButton Text="No" Value="0" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                    </input:RadioButtonGroupView>
+
+                        <Label Text="Snowbrush" 
+                           FontSize="Small" 
+                           TextColor="{StaticResource MaxVonBlack}"
+                           Grid.Row="4"
+                           Grid.Column="0"></Label>
+                    <input:RadioButtonGroupView Orientation="Horizontal" 
+                                                Spacing="15" 
+                                                Grid.Column="1"
+                                                Grid.Row="4"
+                                                HorizontalOptions="Center">
+                        <input:RadioButton Text="Yes" Value="1" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                        <input:RadioButton Text="No" Value="0" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                    </input:RadioButtonGroupView>
+
+                        <Label Text="Carpet Stains /Seat Stains" 
+                           FontSize="Small" 
+                           TextColor="{StaticResource MaxVonBlack}"
+                           Grid.Row="5"
+                           Grid.Column="0"></Label>
+                    <input:RadioButtonGroupView Orientation="Horizontal" 
+                                                Spacing="15" 
+                                                Grid.Column="1"
+                                                Grid.Row="5"
+                                                HorizontalOptions="Center">
+                        <input:RadioButton Text="Yes" Value="1" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                        <input:RadioButton Text="No" Value="0" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                    </input:RadioButtonGroupView>
+
+                        <Label Text="Ins/O. Ship" 
+                           FontSize="Small" 
+                           TextColor="{StaticResource MaxVonBlack}"
+                           Grid.Row="6"
+                           Grid.Column="0"></Label>
+                    <input:RadioButtonGroupView Orientation="Horizontal" 
+                                                Spacing="15" 
+                                                Grid.Column="1"
+                                                Grid.Row="6"
+                                                HorizontalOptions="Center">
+                        <input:RadioButton Text="Yes" Value="1" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                        <input:RadioButton Text="No" Value="0" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                    </input:RadioButtonGroupView>
+
+                        <Label Text="Spare Tire" 
+                           FontSize="Small" 
+                           TextColor="{StaticResource MaxVonBlack}"
+                           Grid.Row="7"
+                           Grid.Column="0"></Label>
+                    <input:RadioButtonGroupView Orientation="Horizontal" 
+                                                Spacing="15" 
+                                                Grid.Column="1"
+                                                Grid.Row="7"
+                                                HorizontalOptions="Center">
+                        <input:RadioButton Text="Yes" Value="1" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                        <input:RadioButton Text="No" Value="0" TextFontSize="12" TextColor="{StaticResource MaxVonGray}"/>
+                    </input:RadioButtonGroupView>
+                    </Grid>-->
+
+
+                    <Frame BackgroundColor="Transparent"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Padding="3"
+                       CornerRadius="5"
+                           Margin="5,20,5,10"
+                           x:Name="signaturePadFrame">
+                        <controls:SignaturePadView x:Name="signatureView"
+	                                            StrokeWidth="3"
+	                                            StrokeColor="{StaticResource Black}"
+	                                            BackgroundColor="{StaticResource MaxVonWhite}"
+                                               HeightRequest="120"
+                                               Margin="5,5,5,5"
+                                                   ClearText=""/>
+                    </Frame>
+                    <Grid HorizontalOptions="Fill"
+                              Margin="5,0,5,25"
+                              ColumnSpacing="10"
+                          x:Name="signaturePadGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button BackgroundColor="{StaticResource MaxVonGray}"
+                                    Text="Clear"
+                                    TextColor="{StaticResource MaxVonWhite}"
+                                    BorderWidth="0"
+                                    CornerRadius="10"
+                                    x:Name="clearSigBtn"
+                                    HeightRequest="45"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                Clicked="ClearSigBtn_Clicked"></Button>
+
+                        <Button BackgroundColor="{StaticResource MaxVonGreen}"
+                                    Text="Save"
+                                    TextColor="{StaticResource MaxVonWhite}"
+                                    BorderWidth="0"
+                                    CornerRadius="10"
+                                    x:Name="saveSignatureBtn"
+                                    HeightRequest="45"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                Clicked="SaveSignatureBtn_Clicked"></Button>
+
+                    </Grid>
+
+                    <Frame BackgroundColor="Transparent"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Padding="3"
+                       CornerRadius="5"
+                           Margin="5,20,5,10"
+                           x:Name="imageFrame">
+                        <Image BackgroundColor="{StaticResource MaxVonWhite}"
+                               HeightRequest="120"
+                               Margin="5,5,5,5"
+                               IsVisible="True"
+                               x:Name="signatureImage"/>
+                        
+                    </Frame>
+
+
+                    <Frame BackgroundColor="Transparent"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Padding="3"
+                       CornerRadius="5"
+                           Margin="5,20,5,10"
+                           x:Name="noSignatureFrame"
+                           HeightRequest="120">
+                        <Label
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center">No signature images.</Label>
+                    </Frame>
+
+
+                    <Button BackgroundColor="{StaticResource MaxVonYellow}"
+                                    Text="Damage checkList - CheckIn"
+                                    TextColor="{StaticResource MaxVonWhite}"
+                                    BorderWidth="0"
+                                    CornerRadius="10"
+                                    x:Name="checklistBtn"
+                                    HeightRequest="45"
+                            HorizontalOptions="Fill"
+                                Clicked="checklistBtn_Clicked"
+                            IsVisible="False"
+                             Margin="5,5,5,5"></Button>
+
+                    
+
+
+                   
+
+                    <Button BackgroundColor="{StaticResource MaxVonYellow}"
+                                    Text="Vehicle Image"
+                                    TextColor="{StaticResource MaxVonWhite}"
+                                    BorderWidth="0"
+                                    CornerRadius="10"
+                                    x:Name="VehicleImageBtn"
+                                    HeightRequest="45"
+                            HorizontalOptions="Fill"
+                                Clicked="VehicleImageBtn_Clicked"
+                             Margin="5,5,5,5"></Button>
+
+                    <Button BackgroundColor="{StaticResource MaxVonYellow}"
+                                    Text="Back"
+                                    TextColor="{StaticResource MaxVonWhite}"
+                                    BorderWidth="0"
+                                    CornerRadius="10"
+                                    x:Name="backBtn"
+                                    HeightRequest="45"
+                            HorizontalOptions="Fill"
+                                Clicked="BackBtn_Clicked"
+                             Margin="5,5,5,25"></Button>
+
+
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

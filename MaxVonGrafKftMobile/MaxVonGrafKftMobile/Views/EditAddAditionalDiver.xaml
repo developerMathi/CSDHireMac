@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:renders="clr-namespace:MaxVonGrafKftMobile.Renders"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.Views.EditAddAditionalDiver">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Add aditional driver"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="CenterAndExpand"
+                       FontSize="Subtitle"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource MaxVonBlack}"/>
+
+            <ScrollView>
+                <StackLayout Margin="20,20,20,30" VerticalOptions="CenterAndExpand">
+                    <Grid RowSpacing="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+                        <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+                        <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="2"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+
+
+                        <renders:CustomEntry Grid.Row="0"
+                                         Grid.Column="0"
+                                         Placeholder="First Name"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Margin="0,0,0,0"
+                                             x:Name="FnameEntry"></renders:CustomEntry>
+
+                        <renders:CustomEntry Grid.Row="1"
+                                         Grid.Column="0"
+                                         Placeholder="Last Name"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Margin="0,0,0,0"
+                                             x:Name="LnameEntry"></renders:CustomEntry>
+
+                        <renders:CustomEntry Grid.Row="2"
+                                         Grid.Column="0"
+                                         Placeholder="Phone number"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Margin="0,0,0,0"
+                                             Keyboard="Telephone"
+                                             x:Name="phoneEntry"></renders:CustomEntry>
+
+                    </Grid>
+
+
+                    <Button BackgroundColor="{StaticResource MaxVonYellow}"
+                            Text="Submit"
+                            TextColor="{StaticResource MaxVonWhite}"
+                            BorderWidth="0"
+                            CornerRadius="10"
+                            x:Name="submitBtn"
+                            HeightRequest="45"
+                            Margin="0,30,0,40"
+                            Clicked="submitBtn_Clicked"></Button>
+
+
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:MaxVonGrafKftMobile.MarkupExtensions"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.Views.WelcomPage"
+             BackgroundColor="{StaticResource BackgroundGray}"
+             NavigationPage.HasNavigationBar="False">
+    <!--BackgroundImageSource="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.neonbrand-263896-unsplash.jpg}"-->
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView>
+                <StackLayout HorizontalOptions="FillAndExpand"
+                         Margin="20,0,20,50"
+                             VerticalOptions="Fill">
+                    <Frame Padding="0"
+                   BackgroundColor="Transparent"
+                   BorderColor="{StaticResource MaxVonWhite}"
+                   WidthRequest="35"
+                   HeightRequest="35"
+                   CornerRadius="70"
+                   HorizontalOptions="End"
+                    VerticalOptions="Start"
+                   Margin="0,20,0,0"
+                   x:Name="loginBtnFrame">
+                        <Image VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                         x:Name="HomeBtn"
+                         BackgroundColor="Transparent"
+                         HeightRequest="25"
+                         WidthRequest="25"
+                         Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.home.png}"></Image>
+                    </Frame>
+
+
+                    <Image x:Name="logoImage"
+                       Aspect="AspectFit"
+                       HeightRequest="150"
+                       Margin="30,10,10,50"
+                   VerticalOptions="StartAndExpand"
+                   HorizontalOptions="FillAndExpand"></Image>
+
+                   
+
+                    <Button Text="BOOK NOW"
+                        BorderWidth="0"
+                        x:Name="BooknowBtn"
+                        Clicked= "BooknowBtn_Clicked"
+                        HeightRequest="45"
+                        BackgroundColor="{StaticResource MaxVonYellow}"
+                        TextColor="{StaticResource MaxVonWhite}"
+                            VerticalOptions="End"
+                            Margin="0,0,0,0"
+                        StyleClass="bouncy"
+                            Visual="Material"></Button>
+
+                    <Frame x:Name="bookNowLoader"
+                        HeightRequest="45"
+                        BackgroundColor="{StaticResource MaxVonYellow}"
+                            VerticalOptions="End"
+                            Margin="0,0,0,0"
+                           IsVisible="False"
+                           Padding="0">
+                        <ActivityIndicator VerticalOptions="Center"
+                                           HorizontalOptions="Center"
+                                           Color="{StaticResource MaxVonWhite}"
+                                           IsRunning="False"
+                                           x:Name="bookNowSpinner"
+                                           HeightRequest="30"></ActivityIndicator>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

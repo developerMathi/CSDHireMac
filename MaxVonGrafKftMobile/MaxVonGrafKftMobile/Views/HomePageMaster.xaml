@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:renders="clr-namespace:MaxVonGrafKftMobile.Renders"
+             xmlns:local="clr-namespace:MaxVonGrafKftMobile.MarkupExtensions"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.Views.HomePageMaster"
+             Title="Master"
+             BackgroundColor="Transparent">
+    <Frame BackgroundColor="{StaticResource MaxVonBlack}"
+           CornerRadius="10"
+           BorderColor="Transparent"
+           Padding="2">
+        <StackLayout>
+            <ListView x:Name="MenuItemsListView"
+              SeparatorVisibility="None"
+              ItemsSource="{Binding MenuItems}"
+              SeparatorColor="{StaticResource MaxVonYellow}"
+                      Margin="0,20,0,0"
+                      BackgroundColor="Transparent">
+
+                <ListView.Header>
+                    <Grid HeightRequest="60">
+                        <Image VerticalOptions="Center"
+                        HorizontalOptions="CenterAndExpand"
+                         x:Name="HomeBtn"
+                         BackgroundColor="Transparent"
+                         HeightRequest="20"
+                               Aspect="AspectFit"
+                         Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.logo_high_resolution_white-1.png}"></Image>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <renders:ExtendedViewCell SelectedBackgroundColor="{StaticResource MaxVonBlack}">
+                            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <!--<ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="9*"/>-->
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--<Frame BorderColor="{StaticResource White}"
+                                           CornerRadius="11"
+                                           Padding="4"
+                                           BackgroundColor="{StaticResource White}">
+                                        <Image Source="{Binding IconSource}"
+                                       Grid.Column="0"></Image>
+                                    </Frame>-->
+
+                                    <Label VerticalOptions="FillAndExpand" 
+                                       VerticalTextAlignment="Center" 
+                                       Text="{Binding Title}" 
+                                       d:Text="{Binding .}"
+                                       FontSize="Default"
+                                       Grid.Column="0"
+                                               TextColor="{StaticResource MaxVonWhite}"/>
+                                </Grid>
+                            </StackLayout>
+                        </renders:ExtendedViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </Frame>
+</ContentPage>

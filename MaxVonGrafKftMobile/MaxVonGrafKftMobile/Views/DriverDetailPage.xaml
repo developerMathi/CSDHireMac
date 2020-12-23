@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:renders="clr-namespace:MaxVonGrafKftMobile.Renders"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.Views.DriverDetailPage"
+             BackgroundColor="{StaticResource MaxVonWhite}">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Driver details"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="CenterAndExpand"
+                       FontSize="Subtitle"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource MaxVonBlack}"/>
+
+            <ScrollView>
+                <StackLayout Margin="20,20,20,30" VerticalOptions="CenterAndExpand">
+                    <Grid RowSpacing="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource IosEntryBarderColor}"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="5"></Frame>
+                        <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource IosEntryBarderColor}"
+                           Grid.Row="3"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="5"></Frame>
+                        <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource IosEntryBarderColor}"
+                           Grid.Row="5"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="5"></Frame>
+                        <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource IosEntryBarderColor}"
+                           Grid.Row="7"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="5"></Frame>
+                        <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource IosEntryBarderColor}"
+                           Grid.Row="9"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="5"></Frame>
+                        <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource IosEntryBarderColor}"
+                           Grid.Row="11"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="5"></Frame>
+                        <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource IosEntryBarderColor}"
+                           Grid.Row="13"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="5"></Frame>
+                        <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource IosEntryBarderColor}"
+                           Grid.Row="15"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="5"></Frame>
+
+
+
+
+                        <Label Text="first name"
+                               Grid.Row="0"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource Black}"
+                               FontAttributes="Bold"
+                               VerticalOptions="End"/>
+                        <renders:CustomEntry Grid.Row="1"
+                                         Grid.Column="0"
+                                         Placeholder="First Name"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Margin="0,0,0,0"
+                                             x:Name="FnameEntry"
+                                             IsEnabled="False"></renders:CustomEntry>
+
+
+                        <Label Text="Last name"
+                               Grid.Row="2"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource Black}"
+                               FontAttributes="Bold"
+                               VerticalOptions="End"/>
+                        <renders:CustomEntry Grid.Row="3"
+                                         Grid.Column="0"
+                                         Placeholder="Last Name"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Margin="10,0,0,0"
+                                             x:Name="LnameEntry"
+                                             IsEnabled="False"></renders:CustomEntry>
+
+                        <Label Text="Phone number"
+                               Grid.Row="4"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource Black}"
+                               FontAttributes="Bold"
+                               VerticalOptions="End"/>
+                        <renders:CustomEntry Grid.Row="5"
+                                         Grid.Column="0"
+                                         Placeholder="Phone number"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Margin="10,0,0,0"
+                                             Keyboard="Telephone"
+                                             x:Name="phoneEntry"
+                                             IsEnabled="False"></renders:CustomEntry>
+
+
+                        <Label Text="Address"
+                               Grid.Row="6"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource Black}"
+                               FontAttributes="Bold"
+                               VerticalOptions="End"/>
+                        <renders:CustomEntry Grid.Row="7"
+                                         Grid.Column="0"
+                                         Placeholder="Address"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Margin="0,0,0,0"
+                                             x:Name="addresssEntry"
+                                             IsEnabled="False"></renders:CustomEntry>
+
+
+
+                        <Label Text="Email address"
+                               Grid.Row="8"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource Black}"
+                               FontAttributes="Bold"
+                               VerticalOptions="End"/>
+                        <renders:CustomEntry Grid.Row="9"
+                                         Grid.Column="0"
+                                         Placeholder="Email address"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Margin="0,0,0,0"
+                                             x:Name="emailEntry"
+                                             IsEnabled="False"></renders:CustomEntry>
+
+                        <Label Text="City"
+                               Grid.Row="10"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource Black}"
+                               FontAttributes="Bold"
+                               VerticalOptions="End"/>
+                        <renders:CustomEntry Grid.Row="11"
+                                         Grid.Column="0"
+                                         Placeholder="city"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Margin="0,0,0,0"
+                                             x:Name="cityEntry"
+                                             IsEnabled="False"></renders:CustomEntry>
+
+                        <Label Text="Date of birth"
+                               Grid.Row="12"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource Black}"
+                               FontAttributes="Bold"
+                               VerticalOptions="End"/>
+                        <renders:CustomEntry Grid.Row="13"
+                                         Grid.Column="0"
+                                         Placeholder="city"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Margin="0,0,0,0"
+                                             x:Name="dateOfBirthEntry"
+                                             IsEnabled="False"></renders:CustomEntry>
+
+                        <Label Text="Licence number"
+                               Grid.Row="14"
+                               Grid.Column="0"
+                               FontSize="Small"
+                               TextColor="{StaticResource Black}"
+                               FontAttributes="Bold"
+                               VerticalOptions="End"/>
+                        <renders:CustomEntry Grid.Row="15"
+                                         Grid.Column="0"
+                                         Placeholder="city"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Margin="0,0,0,0"
+                                             x:Name="licNoEntry"
+                                             IsEnabled="False"></renders:CustomEntry>
+
+
+
+
+                    </Grid>
+
+                    <Button BackgroundColor="{StaticResource DanderRed}"
+                            Text="Delete driver"
+                            TextColor="{StaticResource MaxVonWhite}"
+                            BorderWidth="0"
+                            CornerRadius="10"
+                            x:Name="dltBtn"
+                            HeightRequest="45"
+                            Margin="0,30,0,10"
+                            Clicked="dltBtn_Clicked"></Button>
+
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

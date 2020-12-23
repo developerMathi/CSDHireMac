@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView"
+             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.Views.VehicleDamageImage"
+             BackgroundColor="{StaticResource MaxVonWhite}">
+    <ContentPage.Content>
+        <StackLayout Margin="10,5,10,0" VerticalOptions="CenterAndExpand">
+            <Label Text="Vehicle Images"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="Subtitle"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource MaxVonBlack}"
+                   Margin="0,0,0,5"/>
+            <!--<ContentView HeightRequest="40" HorizontalOptions="FillAndExpand">
+                <controls:TabsControl
+                StripeColor="Gold"
+                ToFadeDuration="2000"
+                HeightRequest="40"
+                BindingContext="{x:Reference cube}">
+                    <controls:TabsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Label HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               FontSize="24"
+                               FontAttributes="Bold"
+                               TextColor="Gold"
+                               Text="{Binding Title}"/>
+
+                        </DataTemplate>
+                    </controls:TabsControl.ItemTemplate>
+                </controls:TabsControl>
+            </ContentView>
+            <cards:CubeView
+                x:Name="cube"
+                VerticalOptions="FillAndExpand"
+                ItemsSource="{Binding Items}"
+                SelectedIndex="{Binding CurrentIndex}">
+                <cards:CubeView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView>
+                            <Frame 
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            HeightRequest="300"
+                            WidthRequest="300"
+                            Padding="0" 
+                            HasShadow="false"
+                            BackgroundColor="{Binding Color}"
+                            IsClippedToBounds="true"
+                            CornerRadius="10">
+
+                                -->
+            <!--<ffimage:CachedImage
+                                Source="{Binding Source}" Aspect="AspectFill"/>-->
+            <!--
+
+                            </Frame>
+                        </ContentView>
+                    </DataTemplate>
+                </cards:CubeView.ItemTemplate>
+            </cards:CubeView>
+            <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="FillAndExpand">
+                <Button TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        FontAttributes="Bold"
+                        Text="PREV"
+                        FontSize="30"
+                        Command="{Binding PanPositionChangedCommand}" 
+                        CommandParameter="False"/>
+                <Button TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        FontAttributes="Bold"
+                        Text="NEXT"
+                        FontSize="30"
+                        Command="{Binding PanPositionChangedCommand}" 
+                        CommandParameter="True"/>
+            </StackLayout>-->
+
+            <ScrollView Margin="0,15,0,0"
+                        VerticalScrollBarVisibility="Never">
+
+
+
+                <StackLayout >
+                    <Grid Margin="10,1,10,10"
+                          HorizontalOptions="FillAndExpand"
+                          VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="220"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="220"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Frame Grid.Row="0"
+                               Grid.RowSpan="2"
+                               Grid.Column="0"
+                               BackgroundColor="Transparent"
+                               BorderColor="{StaticResource MaxVonYellow}"
+                               CornerRadius="10"
+                               VerticalOptions="FillAndExpand"
+                               x:Name="FrontImageFrame"></Frame>
+                        <Frame Grid.Row="0"
+                               Grid.RowSpan="2"
+                               Grid.Column="1"
+                               BackgroundColor="Transparent"
+                               BorderColor="{StaticResource MaxVonYellow}"
+                               CornerRadius="10"
+                               VerticalOptions="FillAndExpand"
+                               x:Name="RearImageFrame"></Frame>
+                        <Frame Grid.Row="2"
+                               Grid.RowSpan="2"
+                               Grid.Column="0"
+                               BackgroundColor="Transparent"
+                               BorderColor="{StaticResource MaxVonYellow}"
+                               CornerRadius="10"
+                               VerticalOptions="FillAndExpand"
+                               x:Name="LeftImageFrame"></Frame>
+                        <Frame Grid.Row="2"
+                               Grid.RowSpan="2"
+                               Grid.Column="1"
+                               BackgroundColor="Transparent"
+                               BorderColor="{StaticResource MaxVonYellow}"
+                               CornerRadius="10"
+                               VerticalOptions="FillAndExpand"
+                               x:Name="RightImageFrame"></Frame>
+                        
+                        <Label FontSize="Subtitle"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Grid.Row="0"
+                               Grid.Column="0">Front</Label>
+                        <Label FontSize="Subtitle"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Grid.Row="0"
+                               Grid.Column="1">Rear</Label>
+                        <Label FontSize="Subtitle"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Grid.Row="2"
+                               Grid.Column="0">Left</Label>
+                        <Label FontSize="Subtitle"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Grid.Row="2"
+                               Grid.Column="1">Right</Label>
+
+                        <Image Grid.Row="1"
+                               Grid.Column="0"
+                               x:Name="FrontImage"
+                               Aspect="AspectFit"
+                               Margin="5"
+                               HeightRequest="250"></Image>
+                        <Image Grid.Row="1"
+                               Grid.Column="1"
+                               x:Name="RearImage"
+                               Aspect="AspectFit"
+                               Margin="5"></Image>
+                        <Image Grid.Row="3"
+                               Grid.Column="0"
+                               x:Name="LeftImage"
+                               Aspect="AspectFit"
+                               Margin="5"></Image>
+                        <Image Grid.Row="3"
+                               Grid.Column="1"
+                               x:Name="RightImage"
+                               Aspect="AspectFit"
+                               Margin="5"></Image>
+
+                    </Grid>
+                    
+                    <Button BackgroundColor="{StaticResource MaxVonYellow}"
+                                    Text="Continue"
+                                    TextColor="{StaticResource MaxVonWhite}"
+                                    BorderWidth="0"
+                                    CornerRadius="10"
+                                    x:Name="continueBtn"
+                                    HeightRequest="45"
+                                Clicked="continueBtn_Clicked"></Button>
+                </StackLayout>
+               
+
+
+            </ScrollView>
+            <Label Margin="0,0,0,5"
+                   FontSize="Small"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="End"
+                   TextColor="{StaticResource MaxVonGray}">Click on the images to Add / Edit</Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:renders="clr-namespace:MaxVonGrafKftMobile.Renders"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.Views.RegisterPage"
+              BackgroundColor="{StaticResource MaxVonWhite}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="10,1,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                
+                <Frame HeightRequest="40"
+                       WidthRequest="40"
+                       CornerRadius="40"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Padding="0"
+                       BackgroundColor="{StaticResource MaxVonYellow}"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand">
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource MaxVonWhite}">1</Label>
+                </Frame>
+                <Frame HeightRequest="40"
+                       WidthRequest="40"
+                       CornerRadius="40"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Grid.Row="0"
+                       Grid.Column="3"
+                       Padding="0"
+                       BackgroundColor="Transparent"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand">
+                    <Label Grid.Row="0"
+                           Grid.Column="3"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource MaxVonBlack}">2</Label>
+                </Frame>
+                
+                <Frame HeightRequest="40"
+                       WidthRequest="40"
+                       CornerRadius="40"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Grid.Row="0"
+                       Grid.Column="5"
+                       Padding="0"
+                       BackgroundColor="Transparent"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand">
+                    <Label Grid.Row="0"
+                           Grid.Column="5"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource MaxVonBlack}">3</Label>
+                </Frame>
+                
+                
+            </Grid>
+            <StackLayout Margin="0,30,0,10" VerticalOptions="CenterAndExpand">
+                <Label Text="Register Here.."
+                        VerticalOptions="Start" 
+                        HorizontalOptions="CenterAndExpand"
+                       FontSize="Subtitle"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource MaxVonBlack}"/>
+
+                <ScrollView>
+                    <StackLayout Margin="20,5,20,30" VerticalOptions="CenterAndExpand">
+                        <Grid RowSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+                            <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+                            <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="2"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+                            <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="3"
+                           Grid.Column="0"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+
+                            <renders:CustomEntry Grid.Row="0"
+                                         Grid.Column="0"
+                                         Placeholder="Email Address"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Keyboard="Email"
+                                         Margin="0,0,0,0"
+                                                 x:Name="emailEntry"
+                                                 BackgroundColor="White"></renders:CustomEntry>
+
+                            <renders:CustomEntry Grid.Row="1"
+                                         Grid.Column="0"
+                                         Placeholder="Confirm email Address"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Margin="0,0,0,0"
+                                                 Keyboard="Email"
+                                                 x:Name="ConfirmemailEntry"
+                                                 BackgroundColor="White"></renders:CustomEntry>
+
+                            <renders:CustomEntry Grid.Row="2"
+                                         Grid.Column="0"
+                                         Placeholder="Password"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         IsPassword="True"
+                                         Margin="0,0,0,0"
+                                                 x:Name="PasswordEntry"
+                                                 BackgroundColor="White"></renders:CustomEntry>
+
+                            <renders:CustomEntry Grid.Row="3"
+                                         Grid.Column="0"
+                                         Placeholder="Confirm password"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         IsPassword="True"
+                                         Margin="0,0,0,0"
+                                                 x:Name="ConfirmPasswordEntry"
+                                                 BackgroundColor="White"></renders:CustomEntry>
+                        </Grid>
+
+
+
+
+                        <Button BackgroundColor="{StaticResource MaxVonYellow}"
+                            Text="Next"
+                            TextColor="{StaticResource MaxVonWhite}"
+                            BorderWidth="0"
+                            CornerRadius="10"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            x:Name="regiseterNxtBtn"
+                            HeightRequest="45"
+                            Margin="0,30,0,40"
+                            Clicked="RegiseterNxtBtn_Clicked"></Button>
+
+                        <Frame BackgroundColor="{StaticResource MaxVonYellow}"
+                               Padding="0"
+                            CornerRadius="10"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            x:Name="NextSpinnerFrame"
+                            HeightRequest="45"
+                            Margin="0,30,0,40"
+                               IsVisible="False">
+                            <ActivityIndicator Color="{StaticResource MaxVonWhite}"
+                                               IsRunning="False"
+                                               HeightRequest="30"
+                                               VerticalOptions="Center"
+                                               x:Name="nextSpinner"></ActivityIndicator>
+                        </Frame>
+
+
+                        <!--<Image x:Name="registerPageImage"
+                           Aspect="AspectFit"
+                           Margin="10,0,10,30"
+                           BackgroundColor="Transparent"></Image>-->
+
+
+
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

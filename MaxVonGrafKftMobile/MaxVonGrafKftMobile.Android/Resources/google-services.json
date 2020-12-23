@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "641844843360",
+    "firebase_url": "https://navotar-customer-app.firebaseio.com",
+    "project_id": "navotar-customer-app",
+    "storage_bucket": "navotar-customer-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641844843360:android:b4423e9195e3cb5a7e0405",
+        "android_client_info": {
+          "package_name": "com.companyname.MaxVonGrafKftMobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641844843360-8tvt6tfajolmo4f75r1avldfdsg2ggms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlW07Q4PmaV_jIhBvTifIXAc0gBVpH6yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641844843360-8tvt6tfajolmo4f75r1avldfdsg2ggms.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

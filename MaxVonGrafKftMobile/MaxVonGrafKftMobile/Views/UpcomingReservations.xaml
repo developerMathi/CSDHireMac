@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:MaxVonGrafKftMobile.MarkupExtensions"
+             xmlns:renders="clr-namespace:MaxVonGrafKftMobile.Renders"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.Views.UpcomingReservations"
+             NavigationPage.HasBackButton="False"            
+             BackgroundColor="{StaticResource MaxVonWhite}">
+    <ContentPage.Content>
+        <StackLayout Margin="15,5,15,0" VerticalOptions="CenterAndExpand">
+            <Label Text="Upcoming reservations"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Subtitle"
+               FontAttributes="Bold"
+               TextColor="{StaticResource MaxVonBlack}"
+               Margin="0,0,0,5"/>
+            <Grid BackgroundColor="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+            
+                <SearchBar Placeholder="Reservation number..." TextChanged="SearchBar_TextChanged" FontSize="Small" CancelButtonColor="{StaticResource MaxVonYellow}" PlaceholderColor="{StaticResource MaxVonGray}"
+                            TextColor="{StaticResource MaxVonBlack}"
+                           HeightRequest="35"
+                           Margin="0,5,0,0"
+                           x:Name="numberSearchBar"
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           BackgroundColor="White"></SearchBar>
+                <SearchBar Placeholder="Check-Out Location..." TextChanged="SearchBar_TextChanged_1" FontSize="Small" CancelButtonColor="{StaticResource MaxVonYellow}" PlaceholderColor="{StaticResource MaxVonGray}"
+                           TextColor="{StaticResource MaxVonBlack}"
+                           HeightRequest="35"
+                           Margin="0,5,0,0"
+                           x:Name="checkoutLocationSearchBar"
+                           IsVisible="False"
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           BackgroundColor="White"></SearchBar>
+                <SearchBar Placeholder="Check-In Location..." TextChanged="SearchBar_TextChanged_2" FontSize="Small" CancelButtonColor="{StaticResource MaxVonYellow}" PlaceholderColor="{StaticResource MaxVonGray}"
+                           TextColor="{StaticResource MaxVonBlack}"
+                           HeightRequest="35"
+                           Margin="0,5,0,0"
+                           x:Name="checkinLocationSearchBar"
+                           IsVisible="False"
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           BackgroundColor="White"></SearchBar>
+                <SearchBar Placeholder="Status..." TextChanged="SearchBar_TextChanged_3" FontSize="Small" CancelButtonColor="{StaticResource MaxVonYellow}" PlaceholderColor="{StaticResource MaxVonGray}"
+                           TextColor="{StaticResource MaxVonBlack}"
+                           HeightRequest="35"
+                           Margin="0,5,0,0"
+                           x:Name="statusSearchBar"
+                           IsVisible="False"
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           BackgroundColor="White"></SearchBar>
+                <Frame BackgroundColor="Transparent"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Padding="5,0,5,0"
+                       CornerRadius="10"
+                       HeightRequest="30"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                       x:Name="filterFrame"></Frame>
+            <renders:BorderlessPicker Title="Filter" 
+                                      FontSize="Micro"
+                                      TitleColor="{StaticResource MaxVonGray}"
+                                      TextColor="{StaticResource MaxVonGray}"
+                                      HorizontalOptions="Center"
+                                      VerticalOptions="Center"
+                                      x:Name="filterPicker"
+                                      Grid.Column="1"
+                                      Grid.Row="0"
+                                      Unfocused="filterPicker_Unfocused"></renders:BorderlessPicker>
+            </Grid>
+
+            <ScrollView Margin="0,0,0,0">
+                <StackLayout >
+                    <ListView x:Name="upcomingReservationList" 
+                                              ItemSelected="UpcomingReservationList_ItemSelected" 
+                                              RowHeight="220" 
+                                              Margin="0,10,0,10" 
+                                              SeparatorColor="{StaticResource MaxVonYellow}"
+                                              SeparatorVisibility="Default"
+                              RefreshControlColor="{StaticResource MaxVonYellow}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <renders:ExtendedViewCell SelectedBackgroundColor="{StaticResource MaxVonYellow}">
+                                    <Frame Padding="5"
+                                                           CornerRadius="3"
+                                                           BorderColor="{StaticResource MaxVonBlack}"
+                                                            Margin="0,10,0,10">
+                                        <Grid Padding="5,15,5,15">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="3*"/>
+                                                <ColumnDefinition Width="7*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.ColumnSpan="2"
+                                                                 Grid.Row="0">
+                                                <Label Text="Reservation Number : " FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                                <Label Text="{Binding ReservationNumber}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                            </StackLayout>
+                                            <Label Text="Check-out : " 
+                                                           FontSize="Small" 
+                                                           TextColor="{StaticResource MaxVonGray}"
+                                                           Grid.Row="1"
+                                                           Grid.Column="0"></Label>
+
+                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.Column="1"
+                                                                 Grid.Row="1"
+                                                                         Padding="0">
+                                                <ImageButton BackgroundColor='Transparent' Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.calender.png}" HeightRequest="20"></ImageButton>
+                                                <Label Text="{Binding StartDate}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.Column="1"
+                                                                 Grid.Row="2"
+                                                                         Padding="0">
+                                                <ImageButton BackgroundColor='Transparent' Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.location.png}" HeightRequest="20" ></ImageButton>
+                                                <Label Text="{Binding CheckoutLocation}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                            </StackLayout>
+
+
+
+                                            <Label Text="Check-in : " 
+                                                           FontSize="Small" 
+                                                           TextColor="{StaticResource MaxVonGray}"
+                                                           Grid.Row="3"
+                                                           Grid.Column="0"></Label>
+
+                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.Column="1"
+                                                                 Grid.Row="3"
+                                                                         Padding="0">
+                                                <ImageButton BackgroundColor='Transparent' Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.calender.png}" HeightRequest="20"></ImageButton>
+                                                <Label Text="{Binding EndDate}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal"
+                                                                 Grid.Column="1"
+                                                                 Grid.Row="4"
+                                                                         Padding="0">
+                                                <ImageButton BackgroundColor='Transparent' Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.location.png}" HeightRequest="20" ></ImageButton>
+                                                <Label Text="{Binding CheckinLocation}" FontSize="Small" TextColor="{StaticResource MaxVonGray}"></Label>
+                                            </StackLayout>
+
+
+
+                                            <Label Text="status : " 
+                                                           FontSize="Small" 
+                                                           TextColor="{StaticResource MaxVonGray}"
+                                                           Grid.Row="5"
+                                                           Grid.Column="0"></Label>
+                                            <Label Text="{Binding Status}" 
+                                                           FontSize="Small" 
+                                                           TextColor="{StaticResource MaxVonGray}"
+                                                           Grid.Row="5"
+                                                           Grid.Column="1"></Label>
+                                        </Grid>
+                                    </Frame>
+                                </renders:ExtendedViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <Frame Padding="5"
+                                            CornerRadius="3"
+                                            BorderColor="{StaticResource MaxVonBlack}"
+                                            Margin="0,20,0,20"
+                                            x:Name="emptyReservation"
+                                            IsVisible="False">
+                        <Grid Padding="5,15,5,15">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="No upcoming reservation " 
+                                                   FontSize="Small" 
+                                                   TextColor="{StaticResource MaxVonGray}"
+                                                   Grid.Row="2"
+                                                   Grid.ColumnSpan="2"
+                                                   HorizontalOptions="Center"></Label>
+                        </Grid>
+                    </Frame>
+
+
+                    <Button Text="Back to Homepage"
+                                BackgroundColor="{StaticResource MaxVonYellow}"
+                                TextColor="{StaticResource MaxVonWhite}"
+                                BorderWidth="0"
+                                CornerRadius="10"
+                                HeightRequest="45"
+                                x:Name="homeBtn"
+                                Margin="0,10,0,30"
+                                Clicked="HomeBtn_Clicked"></Button>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

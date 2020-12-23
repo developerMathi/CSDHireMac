@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:renders="clr-namespace:MaxVonGrafKftMobile.Renders"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.Views.LoginPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource MaxVonWhite}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="back" x:Name="backTool" Clicked="backTool_Clicked" ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand"
+                         VerticalOptions="CenterAndExpand" Margin="20,30,20,20">
+                <Image x:Name="logoImage"
+                       Aspect="AspectFit"
+                       HeightRequest="150"
+                       Margin="10,0,10,50"></Image>
+
+                <Grid RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="9*"/>
+                    </Grid.ColumnDefinitions>
+                    <Frame BackgroundColor="White"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+                    <Frame BackgroundColor="White"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+                    <ImageButton Grid.Row="0"
+                                 Grid.Column="0"
+                                 x:Name="emailIcon"
+                                 BackgroundColor="Transparent"></ImageButton>
+                    <ImageButton Grid.Row="1"
+                                 Grid.Column="0"
+                                 x:Name="passwordIcon"
+                                 BackgroundColor="Transparent"></ImageButton>
+                    <renders:CustomEntry Grid.Row="0"
+                                         Grid.Column="1"
+                                         Placeholder="Email Address"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         Keyboard="Email"
+                                         Margin="0,0,0,0"
+                                         x:Name="loginEmailAddress" 
+                                         BackgroundColor="White"></renders:CustomEntry>
+                    <renders:CustomEntry Grid.Row="1"
+                                         Grid.Column="1"
+                                         Placeholder="Password"
+                                         PlaceholderColor="{StaticResource MaxVonGray}"
+                                         FontSize="Small"
+                                         IsPassword="True"
+                                         Margin="0,0,0,0"
+                                         x:Name="loginPassword" 
+                                         BackgroundColor="White"></renders:CustomEntry>
+                </Grid>
+                <Label TextColor="{StaticResource DanderRed}"
+                       FontSize="Small"
+                       Margin="0,0,0,5"
+                       x:Name="errorLabel"></Label>
+                <Grid Margin="0,30,0,40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/> 
+                    </Grid.RowDefinitions>
+                    <Button BackgroundColor="{StaticResource MaxVonYellow}"
+                        Text="Log in"
+                        TextColor="{StaticResource MaxVonWhite}"
+                        BorderWidth="0"
+                        CornerRadius="10"
+                        x:Name="LoginButton"
+                        Clicked="LoginButton_Clicked"
+                        HeightRequest="45"
+                            Grid.Row="0"
+                            Grid.Column="1"></Button>
+
+                    <Button BackgroundColor="Transparent"
+                        Text="Back"
+                        TextColor="{StaticResource MaxVonYellow}"
+                        BorderWidth="1"
+                        CornerRadius="10"
+                            BorderColor="{StaticResource MaxVonYellow}"
+                        Clicked="backBtn_Clicked"
+                        HeightRequest="45"
+                            Grid.Row="0"
+                            Grid.Column="0"></Button>
+
+                    <Frame BackgroundColor="{StaticResource MaxVonYellow}"
+                        CornerRadius="10"
+                        Margin="0,30,0,40"
+                        HeightRequest="45"
+                       Padding="0"
+                       IsVisible="False"
+                       x:Name="loginSpinnerFrame"
+                           Grid.Row="0"
+                            Grid.Column="1">
+                        <ActivityIndicator Color="{StaticResource MaxVonWhite}"
+                                       IsRunning="True"
+                                       HeightRequest="30"
+                                       VerticalOptions="Center"
+                                       x:Name="loginSpinner"
+                                        Grid.Row="0"
+                                           Grid.Column="1"></ActivityIndicator>
+                    </Frame>
+
+                </Grid>
+               
+                
+
+                <Label TextColor="{StaticResource MaxVonBlack}"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,40"
+                       x:Name="forgetPasswordLabel">Forget Password?</Label>
+
+                <StackLayout Orientation="Horizontal" 
+                             HorizontalOptions="CenterAndExpand"
+                             Margin="0,0,0,30">
+
+                    <Label TextColor="{StaticResource MaxVonBlack}" 
+                           Margin="0,0,1,0"
+                           VerticalOptions="Center">Don't have an account?</Label>
+                    <Button BackgroundColor="{StaticResource MaxVonYellow}"
+                            Text="Sign Up"
+                            TextColor="{StaticResource MaxVonWhite}"
+                            BorderWidth="0"
+                            CornerRadius="10"
+                            Padding="10,0,10,0"
+                            FontSize="Small"
+                            HeightRequest="30"
+                            x:Name="signUpBtn"
+                            Clicked="SignUpBtn_Clicked"></Button>
+                    <Label TextColor="{StaticResource MaxVonBlack}" 
+                           Margin="1,0,0,0"
+                           VerticalOptions="Center">Here.</Label>
+
+
+                </StackLayout>
+
+
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

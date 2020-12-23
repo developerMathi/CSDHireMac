@@ -1,0 +1,159 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\back.png" />
+    <None Remove="Assets\backicon.png" />
+    <None Remove="Assets\calender.png" />
+    <None Remove="Assets\cameraIcon.png" />
+    <None Remove="Assets\CarSample.JPEG" />
+    <None Remove="Assets\CarSample.jpg" />
+    <None Remove="Assets\CSDLandscape.jpg" />
+    <None Remove="Assets\CSDLPortait.png" />
+    <None Remove="Assets\emailIcon.png" />
+    <None Remove="Assets\Front.png" />
+    <None Remove="Assets\gears.png" />
+    <None Remove="Assets\home.png" />
+    <None Remove="Assets\location.png" />
+    <None Remove="Assets\Login.png" />
+    <None Remove="Assets\LoginIcon.png" />
+    <None Remove="Assets\LogInTool.png" />
+    <None Remove="Assets\logo.jpg" />
+    <None Remove="Assets\logOutTool.png" />
+    <None Remove="Assets\logo_high_resolution_white-1.png" />
+    <None Remove="Assets\luggage.png" />
+    <None Remove="Assets\menu.png" />
+    <None Remove="Assets\neonbrand-263896-unsplash.jpg" />
+    <None Remove="Assets\nextIcon.png" />
+    <None Remove="Assets\passwordIcon.png" />
+    <None Remove="Assets\profile.jpg" />
+    <None Remove="Assets\registerPageImage.png" />
+    <None Remove="Assets\rental.png" />
+    <None Remove="Assets\seat.png" />
+    <None Remove="Assets\sendEmail.png" />
+    <None Remove="Assets\side1.png" />
+    <None Remove="Assets\side2.png" />
+    <None Remove="Assets\time.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\back.png" />
+    <EmbeddedResource Include="Assets\backicon.png" />
+    <EmbeddedResource Include="Assets\calender.png" />
+    <EmbeddedResource Include="Assets\cameraIcon.png" />
+    <EmbeddedResource Include="Assets\CarSample.JPEG" />
+    <EmbeddedResource Include="Assets\CarSample.jpg" />
+    <EmbeddedResource Include="Assets\CSDLandscape.jpg" />
+    <EmbeddedResource Include="Assets\CSDLPortait.png" />
+    <EmbeddedResource Include="Assets\Front.png" />
+    <EmbeddedResource Include="Assets\gears.png" />
+    <EmbeddedResource Include="Assets\home.png" />
+    <EmbeddedResource Include="Assets\location.png" />
+    <EmbeddedResource Include="Assets\Login.png" />
+    <EmbeddedResource Include="Assets\LoginIcon.png" />
+    <EmbeddedResource Include="Assets\LogInTool.png" />
+    <EmbeddedResource Include="Assets\logo.jpg" />
+    <EmbeddedResource Include="Assets\logOutTool.png" />
+    <EmbeddedResource Include="Assets\logo_high_resolution_white-1.png" />
+    <EmbeddedResource Include="Assets\luggage.png" />
+    <EmbeddedResource Include="Assets\menu.png" />
+    <EmbeddedResource Include="Assets\neonbrand-263896-unsplash.jpg" />
+    <EmbeddedResource Include="Assets\nextIcon.png" />
+    <EmbeddedResource Include="Assets\passwordIcon.png" />
+    <EmbeddedResource Include="Assets\emailIcon.png" />
+    <EmbeddedResource Include="Assets\profile.jpg" />
+    <EmbeddedResource Include="Assets\registerPageImage.png" />
+    <EmbeddedResource Include="Assets\rental.png" />
+    <EmbeddedResource Include="Assets\seat.png" />
+    <EmbeddedResource Include="Assets\sendEmail.png" />
+    <EmbeddedResource Include="Assets\side1.png" />
+    <EmbeddedResource Include="Assets\side2.png" />
+    <EmbeddedResource Include="Assets\time.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CardsView" Version="2.6.2" />
+    <PackageReference Include="ContextViewCell" Version="2.0.1" />
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
+    <PackageReference Include="Microsoft.AppCenter.Push" Version="2.6.4" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.1.0-preview1.19504.10" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="PdfSharp.Xamarin.Forms" Version="1.0.0" />
+    <PackageReference Include="Plugin.Permissions" Version="5.0.0-beta" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
+    <PackageReference Include="System.Buffers" Version="4.5.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.6.0" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.4.6-beta" />
+    <PackageReference Include="Xamarin.Controls.SignaturePad.Forms" Version="3.0.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Xamarin.Forms.InputKit" Version="3.0.15" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.3.0.991211" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MaxVonGrafKftMobileController\MaxVonGrafKftMobileController.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Drawing.Common">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\Xamarin.iOS\v1.0\Facades\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\Xamarin.iOS\v1.0\Xamarin.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Popups\editPrrofilePhotoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Popups\SuccessWithClosePopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Popups\VehicleImagePopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AddAditionalDriver.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AddNewDriver.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DriverDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EditAddAditionalDiver.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EditAddNewDriver.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EditBookNow.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EditSummaryOfCharges.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EditVehicleDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EditVehicleRates.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\VehicleDamageImage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+ 
+</Project>

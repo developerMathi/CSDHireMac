@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MaxVonGrafKftMobile.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Black">#000000</Color>
+            <Color x:Key="LightBlue">#7CAAF8</Color>
+            <Color x:Key="LightBlue2X">#568ff0</Color>
+
+
+            <Color x:Key="MaxVonBlack">#232628</Color>
+            <Color x:Key="MaxVonWhite">#FFFFFF</Color>
+            <Color x:Key="MaxVonYellow">#ff87b7</Color>
+            <Color x:Key="MaxVonYellowLight">#ffdcd9</Color>
+
+            <Color x:Key="MaxVonGray">#9C9D9E</Color>
+            <Color x:Key="MaxVonGreen">#219653</Color>
+            <Color x:Key="DanderRed">#801717</Color>
+            <Color x:Key="IosEntryBarderColor">#aeaeae</Color>
+            <Color x:Key="BackgroundGray">#4F4F4F</Color>
+            <Color x:Key="popUpBackground">#eff6f7</Color>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource MaxVonWhite}"></Setter>
+                <Setter Property="BarTextColor" Value="{StaticResource MaxVonYellow}"></Setter>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White"></Setter>
+            </Style>
+            
+            <Style TargetType="ListView">
+                <Setter Property="BackgroundColor" Value="White"></Setter>
+            </Style>
+      
+
+            <!--<Style TargetType="Entry">
+                <Setter Property="FontFamily">
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="Android" Value="Black Vosten Personal Use.ttf#Black Vosten" />
+                        <On Platform="iOS" Value="Black Vosten Personal Use" />
+                    </OnPlatform>
+                </Setter> 
+            </Style>-->
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

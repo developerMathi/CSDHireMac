@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.4.3.0.991211\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.4.3.0.991211\build\Xamarin.Forms.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{49EDA53E-E3FC-4AED-8C12-F83C323C3F9C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MaxVonGrafKftMobileModel</RootNamespace>
+    <AssemblyName>MaxVonGrafKftMobileModel</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessModels\AddAgreementSignMobileRequest.cs" />
+    <Compile Include="AccessModels\AddAgreementSignMobileResponse.cs" />
+    <Compile Include="AccessModels\AddDamageSignMobileRequest.cs" />
+    <Compile Include="AccessModels\AddDamageSignMobileResponse.cs" />
+    <Compile Include="AccessModels\GetAgreementByAgreementIdMobileRequest.cs" />
+    <Compile Include="AccessModels\GetChecklistMobileRequest.cs" />
+    <Compile Include="AccessModels\GetChecklistMobileResponse.cs" />
+    <Compile Include="AccessModels\GetClientDetailsForMobileResponse.cs" />
+    <Compile Include="AccessModels\GetCustomerPortalDetailsMobileRequest.cs" />
+    <Compile Include="AccessModels\GetCustomerPortalDetailsMobileResponse.cs" />
+    <Compile Include="AccessModels\GetForgetPasswordMobileRequest.cs" />
+    <Compile Include="AccessModels\GetForgetPasswordMobileResponse.cs" />
+    <Compile Include="AccessModels\GetStoreHoursMobileRequest.cs" />
+    <Compile Include="AccessModels\GetStoreHoursMobileResponse.cs" />
+    <Compile Include="AccessModels\GetTermsandConditionByTypeRequest.cs" />
+    <Compile Include="AccessModels\GetTermsandConditionByTypeResponse.cs" />
+    <Compile Include="AccessModels\ReloadSignatureImageURLMobileRequest.cs" />
+    <Compile Include="AccessModels\ReloadSignatureImageURLMobileResponse.cs" />
+    <Compile Include="AccessModels\UpdateReservationMobileRequest.cs" />
+    <Compile Include="AccessModels\UpdateReservationMobileResponse.cs" />
+    <Compile Include="AccessModels\UploadCustomerImageMobileRequest.cs" />
+    <Compile Include="AccessModels\UploadCustomerImageMobileResponse.cs" />
+    <Compile Include="AddfourTypeVehicleImagesResponse.cs" />
+    <Compile Include="Admin.cs" />
+    <Compile Include="Agreement.cs" />
+    <Compile Include="AgreementBilling.cs" />
+    <Compile Include="AgreementEquipment.cs" />
+    <Compile Include="AgreementInsurence.cs" />
+    <Compile Include="AgreementNote.cs" />
+    <Compile Include="AgreementReservationCount.cs" />
+    <Compile Include="AgreementReview.cs" />
+    <Compile Include="AgreementReviewDetailSet.cs" />
+    <Compile Include="AccessModels\CancelReservationMobileRequest.cs" />
+    <Compile Include="AccessModels\CancelReservationMobileResponse.cs" />
+    <Compile Include="AccessModels\CreateReservationMobileRequest.cs" />
+    <Compile Include="AccessModels\CreateReservationMobileResponse.cs" />
+    <Compile Include="AccessModels\CustomerSeachResult.cs" />
+    <Compile Include="AccessModels\GetAccessTokenRequest.cs" />
+    <Compile Include="AccessModels\GetAgreementByAgreementIdMobileResponse.cs" />
+    <Compile Include="AccessModels\getAgreementByCustomerIdMobileRequest.cs" />
+    <Compile Include="AccessModels\GetAgreementByCustomerIdMobileResponse.cs" />
+    <Compile Include="AccessModels\GetAllCountryForMobileResponse.cs" />
+    <Compile Include="AccessModels\GetAllLocationForClientIDForMobileRequest.cs" />
+    <Compile Include="AccessModels\GetAllLocationForClientIDForMobileResponse.cs" />
+    <Compile Include="AccessModels\GetAllStateForMobileRequest.cs" />
+    <Compile Include="AccessModels\GetAllStateForMobileResponse.cs" />
+    <Compile Include="AccessModels\GetCalculateSummaryMobileRequest.cs" />
+    <Compile Include="AccessModels\GetCalculateSummaryMobileResponsecs.cs" />
+    <Compile Include="AccessModels\GetClientSecretTokenRequest.cs" />
+    <Compile Include="AccessModels\GetClientSecretTokenResponse.cs" />
+    <Compile Include="AccessModels\GetMischargeSearchDetailsMobileRequest.cs" />
+    <Compile Include="AccessModels\GetMischargeSearchDetailsMobileResponse.cs" />
+    <Compile Include="AccessModels\GetMobileCustomerByIDRequest.cs" />
+    <Compile Include="AccessModels\GetMobileCustomerByIDResponse.cs" />
+    <Compile Include="AccessModels\GetPromotionMobileRequest.cs" />
+    <Compile Include="AccessModels\GetPromotionMobileResponse.cs" />
+    <Compile Include="AccessModels\GetReservationAgreementMobileRequest.cs" />
+    <Compile Include="AccessModels\GetReservationAgreementMobileResponse.cs" />
+    <Compile Include="AccessModels\GetReservationByIDMobileRequest.cs" />
+    <Compile Include="AccessModels\GetReservationByIDMobileResponse.cs" />
+    <Compile Include="AccessModels\GetReservationConfigurationMobileRequest.cs" />
+    <Compile Include="AccessModels\GetReservationConfigurationResponse.cs" />
+    <Compile Include="AccessModels\GetTaxMobileListRequest.cs" />
+    <Compile Include="AccessModels\GetTaxMobileListResponse.cs" />
+    <Compile Include="AccessModels\LocationTaxResult.cs" />
+    <Compile Include="AccessModels\MisChargeFilter.cs" />
+    <Compile Include="AccessModels\UpdateCustomerProfileDetailsMobileRequest.cs" />
+    <Compile Include="AccessModels\UpdateCustomerProfileDetailsMobileResponse.cs" />
+    <Compile Include="CreditCards.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="DefaultDamageList.cs" />
+    <Compile Include="DepositViewModel.cs" />
+    <Compile Include="Driver.cs" />
+    <Compile Include="EmailContactusReq.cs" />
+    <Compile Include="EmailContactusRes.cs" />
+    <Compile Include="GetCustomerAgreementReservationCountRequest.cs" />
+    <Compile Include="GetCustomerAgreementReservationCountResponse.cs" />
+    <Compile Include="GetVehicleDetailsMobileListResponse.cs" />
+    <Compile Include="GetVehicleIdByCodeResponse.cs" />
+    <Compile Include="InsuranceClaimStatusModel.cs" />
+    <Compile Include="LoadvehicleViewImagesReq.cs" />
+    <Compile Include="LoadvehicleViewImagesResponse.cs" />
+    <Compile Include="MischargeResultMobile.cs" />
+    <Compile Include="AccessModels\TaxFilter.cs" />
+    <Compile Include="AgreementReservationMileageBreakdownViewModel.cs" />
+    <Compile Include="AgreementSearchResult.cs" />
+    <Compile Include="ApiMessage.cs" />
+    <Compile Include="ApiToken.cs" />
+    <Compile Include="Attribute.cs" />
+    <Compile Include="BlackoutDays.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="ClientNotes.cs" />
+    <Compile Include="ClientPdfTemplates.cs" />
+    <Compile Include="ClientProducts.cs" />
+    <Compile Include="ClientTrackPayment.cs" />
+    <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="CustomerAddresses.cs" />
+    <Compile Include="CustomerImages.cs" />
+    <Compile Include="CustomerLogin.cs" />
+    <Compile Include="CustomerReview.cs" />
+    <Compile Include="CustomizeColumn.cs" />
+    <Compile Include="CutomerAuthContext.cs" />
+    <Compile Include="CutomerContext.cs" />
+    <Compile Include="Deposit.cs" />
+    <Compile Include="DepositTotals.cs" />
+    <Compile Include="Document.cs" />
+    <Compile Include="DynamicAttributes\NavotarDynamicAttribute.cs" />
+    <Compile Include="EmailClientDetails.cs" />
+    <Compile Include="EmailTrack.cs" />
+    <Compile Include="Invoice.cs" />
+    <Compile Include="InvoiceItem.cs" />
+    <Compile Include="InvoiceViewModel.cs" />
+    <Compile Include="LocationMiscCharge.cs" />
+    <Compile Include="LocationModel.cs" />
+    <Compile Include="LocationRate.cs" />
+    <Compile Include="LocationTaxMobileList.cs" />
+    <Compile Include="LocationTaxModel.cs" />
+    <Compile Include="MessageField.cs" />
+    <Compile Include="MiscChargeSearchReview.cs" />
+    <Compile Include="MisCharge.cs" />
+    <Compile Include="MisChargeOption.cs" />
+    <Compile Include="MisChargeOptionList.cs" />
+    <Compile Include="MisChargeOptionModel.cs" />
+    <Compile Include="MisChargeResult.cs" />
+    <Compile Include="Payment.cs" />
+    <Compile Include="Promotion.cs" />
+    <Compile Include="PromotionItem.cs" />
+    <Compile Include="PromotionMobileResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RateDetail.cs" />
+    <Compile Include="Rates.cs" />
+    <Compile Include="RateViewModelSet.cs" />
+    <Compile Include="Referral.cs" />
+    <Compile Include="RegistrationDBModel.cs" />
+    <Compile Include="Reservation.cs" />
+    <Compile Include="ReservationBilling.cs" />
+    <Compile Include="ReservationConfiguration.cs" />
+    <Compile Include="ReservationInfo.cs" />
+    <Compile Include="ReservationLocationTax.cs" />
+    <Compile Include="ReservationNote.cs" />
+    <Compile Include="ReservationVehicleSearchViewModel.cs" />
+    <Compile Include="ReservationView.cs" />
+    <Compile Include="ReservationViewModel.cs" />
+    <Compile Include="SearchAllCustomerRequest.cs" />
+    <Compile Include="SearchAllCustomerResponse.cs" />
+    <Compile Include="SearchStoreHourModel.cs" />
+    <Compile Include="ShowDriverInReservationReq.cs" />
+    <Compile Include="ShowDriverInReservationResponse.cs" />
+    <Compile Include="State.cs" />
+    <Compile Include="Terms.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="VehicleDamageImageForList.cs" />
+    <Compile Include="VehicleImage.cs" />
+    <Compile Include="VehicleMake.cs" />
+    <Compile Include="VehicleModel.cs" />
+    <Compile Include="VehicleStatus.cs" />
+    <Compile Include="VehicleTypeMobileResult.cs" />
+    <Compile Include="VehicleTypeModel.cs" />
+    <Compile Include="VehicleTypeResult.cs" />
+    <Compile Include="VehicleViewByTypeForMobile.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.4.3.0.991211\build\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.4.3.0.991211\build\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.4.3.0.991211\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.4.3.0.991211\build\Xamarin.Forms.targets'))" />
+  </Target>
+  <Import Project="..\packages\Xamarin.Forms.4.3.0.991211\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.4.3.0.991211\build\Xamarin.Forms.targets')" />
+</Project>

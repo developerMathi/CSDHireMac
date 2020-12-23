@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:renders="clr-namespace:MaxVonGrafKftMobile.Renders"
+             xmlns:local="clr-namespace:MaxVonGrafKftMobile.MarkupExtensions"
+             x:Class="MaxVonGrafKftMobile.Views.BookNow"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="{StaticResource MaxVonWhite}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Login" 
+                     Clicked="ToolbarItem_Clicked" 
+                     x:Name="loginIcon"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+
+        <StackLayout>
+
+            <Grid Margin="10,1,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Frame HeightRequest="40"
+                       WidthRequest="40"
+                       CornerRadius="40"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Padding="0"
+                       BackgroundColor="{StaticResource MaxVonYellow}"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand">
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource MaxVonWhite}">1</Label>
+                </Frame>
+                <Frame HeightRequest="40"
+                       WidthRequest="40"
+                       CornerRadius="40"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Grid.Row="0"
+                       Grid.Column="3"
+                       Padding="0"
+                       BackgroundColor="Transparent"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand">
+                    <Label Grid.Row="0"
+                           Grid.Column="3"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource MaxVonBlack}">2</Label>
+                </Frame>
+
+                <Frame HeightRequest="40"
+                       WidthRequest="40"
+                       CornerRadius="40"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Grid.Row="0"
+                       Grid.Column="5"
+                       Padding="0"
+                       BackgroundColor="Transparent"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand">
+                    <Label Grid.Row="0"
+                           Grid.Column="5"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource MaxVonBlack}">3</Label>
+                </Frame>
+
+                <Frame HeightRequest="40"
+                       WidthRequest="40"
+                       CornerRadius="40"
+                       BorderColor="{StaticResource MaxVonYellow}"
+                       Grid.Row="0"
+                       Grid.Column="7"
+                       Padding="0"
+                       BackgroundColor="Transparent"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand">
+                    <Label Grid.Row="0"
+                           Grid.Column="5"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource MaxVonBlack}">4</Label>
+                </Frame>
+
+
+            </Grid>
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+
+                <Label Text="Book Now - Rental Details"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="CenterAndExpand"
+                       FontSize="Subtitle"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource MaxVonBlack}"
+                   Margin="0,0,0,30"/>
+                <ScrollView Margin="20,0,20,0">
+                    <StackLayout>
+
+
+                        <Grid RowSpacing="10" >
+
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="9*"/>
+                            </Grid.ColumnDefinitions>
+                            <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+                            <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="7"
+                           Grid.Column="1"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+                            <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="2"
+                           Grid.Column="1"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+                            <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="3"
+                           Grid.Column="1"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+                            <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="6"
+                           Grid.Column="1"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+                            <Frame BackgroundColor="Transparent"
+                           BorderColor="{StaticResource MaxVonYellow}"
+                           Grid.Row="5"
+                           Grid.Column="1"
+                           Padding="0,0,0,0"
+                           CornerRadius="10"></Frame>
+                            <Label Text="Pick-up"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               FontSize="Subtitle"
+                               VerticalOptions="End"
+                               Grid.Row="0"
+                               Grid.ColumnSpan="2"
+                               HorizontalOptions="Center"></Label>
+                            <Label Text="Drop-off"
+                               TextColor="{StaticResource MaxVonBlack}"
+                               FontSize="Subtitle"
+                               VerticalOptions="End"
+                               Grid.Row="4"
+                               Grid.ColumnSpan="2"
+                               HorizontalOptions="Center"></Label>
+
+
+                            <renders:BorderlessDatePicker Grid.Row="2"
+                                              Grid.Column="1"
+                                              TextColor="{StaticResource MaxVonGray}"
+                                              FontSize="Small"
+                                              Margin="10,0,0,0"
+                                              x:Name="pickUpDate"
+                                                      HeightRequest="45"
+                                                      Unfocused="PickUpDate_Unfocused"></renders:BorderlessDatePicker>
+
+                            <renders:BorderlessTimePicker Grid.Row="3"
+                                              Grid.Column="1"
+                                              TextColor="{StaticResource MaxVonGray}"
+                                              FontSize="Small"
+                                              Margin="10,0,0,0"
+                                              Placeholder="Pick-up time"
+                                              x:Name="pickUpTime"></renders:BorderlessTimePicker>
+
+                            <renders:BorderlessDatePicker Grid.Row="6"
+                                              Grid.Column="1"
+                                              TextColor="{StaticResource MaxVonGray}"
+                                              FontSize="Small"
+                                              Margin="10,0,0,0"
+                                              x:Name="dropOffDate" ></renders:BorderlessDatePicker>
+
+                            <renders:BorderlessTimePicker Grid.Row="7"
+                                              Grid.Column="1"
+                                              TextColor="{StaticResource MaxVonGray}"
+                                              FontSize="Small"
+                                              Margin="10,0,0,0"
+                                              Placeholder="Drop-off time"
+                                              x:Name="dropOffTime"></renders:BorderlessTimePicker>
+
+                            <renders:BorderlessPicker Grid.Row="1"
+                                          Grid.Column="1"
+                                          Title="Pick-up location"
+                                          TitleColor="{StaticResource MaxVonGray}"
+                                          FontSize="Small"
+                                          Margin="10,0,0,0"
+                                          TextColor="{StaticResource MaxVonGray}"
+                                          x:Name="pickUpLocation"
+                                                  Unfocused="pickUpLocation_Unfocused"></renders:BorderlessPicker>
+
+                            <renders:BorderlessPicker Grid.Row="5"
+                                          Grid.Column="1"
+                                          Title="Drop-off location"
+                                          TitleColor="{StaticResource MaxVonGray}"
+                                          FontSize="Small"
+                                          Margin="10,0,0,0"
+                                          TextColor="{StaticResource MaxVonGray}"
+                                          x:Name="dropOffLocation"></renders:BorderlessPicker>
+
+                            <ImageButton BackgroundColor='Transparent' 
+                                     Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.calender.png}" 
+                                     HeightRequest="30"
+                                     Grid.Column="0"
+                                     Grid.Row="2"></ImageButton>
+
+                            <ImageButton BackgroundColor='Transparent' 
+                                     Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.calender.png}" 
+                                     HeightRequest="30"
+                                     Grid.Column="0"
+                                     Grid.Row="6"></ImageButton>
+
+                            <ImageButton BackgroundColor='Transparent' 
+                                     Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.time.png}" 
+                                     HeightRequest="30"
+                                     Grid.Column="0"
+                                     Grid.Row="3"></ImageButton>
+
+                            <ImageButton BackgroundColor='Transparent' 
+                                     Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.time.png}" 
+                                     HeightRequest="30"
+                                     Grid.Column="0"
+                                     Grid.Row="7"></ImageButton>
+
+                            <ImageButton BackgroundColor='Transparent' 
+                                     Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.location.png}" 
+                                     HeightRequest="30"
+                                     Grid.Column="0"
+                                     Grid.Row="1"></ImageButton>
+
+                            <ImageButton BackgroundColor='Transparent' 
+                                     Source="{local:EmbeddedImage ResourceId=MaxVonGrafKftMobile.Assets.location.png}" 
+                                     HeightRequest="30"
+                                     Grid.Column="0"
+                                     Grid.Row="5"></ImageButton>
+                        </Grid>
+
+                        <Button BackgroundColor="{StaticResource MaxVonYellow}"
+                            Text="Next"
+                            TextColor="{StaticResource MaxVonWhite}"
+                            BorderWidth="0"
+                            CornerRadius="10"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            x:Name="bookNowNxtBtn"
+                            HeightRequest="45"
+                            Margin="0,30,0,5"
+                            Clicked="BookNowNxtBtn_Clicked"></Button>
+
+                        <Button BackgroundColor="{StaticResource MaxVonYellow}"
+                            Text="Back"
+                            TextColor="{StaticResource MaxVonWhite}"
+                            BorderWidth="0"
+                            CornerRadius="10"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            x:Name="backBtn"
+                            HeightRequest="45"
+                            Margin="0,0,0,10"
+                            Clicked="backBtn_Clicked"></Button>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
